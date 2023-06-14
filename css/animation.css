@@ -1,0 +1,46 @@
+/* scale btn nav  */
+.nav--title:hover, .nav--text:hover{
+  scale: 1.1;
+}
+
+.nav--toggle:hover{
+  scale: 1.3;
+}
+
+/* background */
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+
+  .swiper-pagination {
+    position: static !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    top: auto !important;
+}
+
+/* footer */
+
+.footer--nav:hover{
+  scale: 1.2;
+}
+
+.footer-icon--circle:hover {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-in-out;
+  scale: 1.1;
+}
+
+.footer-icon--square:hover{
+  transition: transform 0.5s ease-in-out;
+  scale: 1.4;
+}
+

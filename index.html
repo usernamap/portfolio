@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portfolio</title>
+  <link rel="icon" type="image/ico" href="assets/images/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/darkmode.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <!-- defilement -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="font-sans text-gray-900">
+  <div id="particles-js"></div>
+
+  <header class="shadow-md dark:bg-gray-800">
+    <nav class="container mx-auto px-6 py-3">
+      <div class="flex justify-between items-center">
+          <a href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
+          <div class="md:hidden" x-data="{ open: false }">
+              <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 fill-current">
+                      <path fill-rule="evenodd" d="M4 5a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zm1 7a1 1 0 100 2h14a1 1 0 100-2H5zm1 7a1 1 0 100 2h14a1 1 0 100-2H6z"></path>
+                  </svg>
+              </button>
+              <div x-show="open" 
+                   x-transition:enter="transition ease-out duration-300"
+                   x-transition:enter-start="opacity-0 transform scale-90"
+                   x-transition:enter-end="opacity-100 transform scale-100"
+                   x-transition:leave="transition ease-in duration-300"
+                   x-transition:leave-start="opacity-100 transform scale-100"
+                   x-transition:leave-end="opacity-0 transform scale-90"
+                   class="mt-2 space-y-2 bg-gray-800 rounded p-2">
+                  <a href="#about" class="no-select block text-sm text-gray-200 hover:text-gray-300">À propos</a>
+                  <a href="#skills" class="no-select block text-sm text-gray-200 hover:text-gray-300">Compétences</a>
+                  <a href="#projects" class="no-select block text-sm text-gray-200 hover:text-gray-300">Projets</a>
+                  <a href="#contact" class="no-select block text-sm text-gray-200 hover:text-gray-300">Contact</a>
+              </div>
+          </div>
+          <div class="hidden md:flex space-x-1">
+              <a href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
+              <a href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
+              <a href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
+              <a href="#contact" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Contact</a>
+          </div>
+          <input id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
+      </div>
+  </nav>
+  
+  
+  </nav>
+  
+  </header>
+
+<!-- Main Content -->
+  <main class="container mx-auto px-6 p-10"> 
+    <h2 class="text-4xl font-bold text-center text-white mb-8">
+      Bienvenue sur mon Portfolio
+    </h2>
+
+<!-- Section A propos -->
+<section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+  <div class="w-full md:w-1/2">
+    <h4 class="text-3xl text-white font-bold mb-3">
+      Bonjour, je suis <span class="span">Lucas Blanchard</span>
+    </h4>
+    <p class="text-gray-200 mb-8">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+    </p>
+    <a href="assets/docs/cs_example.pdf" id="cv" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full" download>
+      Télécharger mon CV
+    </a>
+  </div>
+  <div class="img-index w-full md:w-1/2">
+    <img src="assets/images/screenshot_php.png" alt="Jean Forteroche" class="rounded-lg shadow-2xl mt-6 md:mt-0">
+  </div>
+</section>
+
+
+  <!-- Section Compétences -->
+  <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+    <div class="img-index  w-full md:w-1/2">
+        <img src="assets/images/screenshot_react-native.png" alt="Jean Forteroche" class="rounded-lg shadow-2xl">
+      </div>
+      <div class="w-full md:w-1/2 pl-10">
+        <h4 class="text-3xl text-white font-bold mb-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h4>
+        <p class="text-gray-200 mb-8">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+        </p>
+        <!-- <a href="#" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
+          En savoir plus
+        </a> -->
+      </div>
+  </section>
+
+<!-- Section Projets -->
+<section id="projects" class="scrollable-content flex items-center flex-wrap mb-20 section-style">
+  <div class="w-full md:w-1/2">
+    <h4 class="text-3xl text-white font-bold mb-3">
+    Mes projets personnels
+    </h4>
+  </div>
+  <div class="w-full md:w-1/2">
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="assets/images/screenshot_php.png" alt="Projet 1" class="rounded-lg shadow-2xl">
+          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+            <h4 class="project--title text-2xl text-white font-bold mb-3">
+              Nom du projet 1
+            </h4>
+            <p class="project--text text-gray-200 mb-8">
+              Description du projet 1
+            </p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="assets/images/screenshot_php.png" alt="Projet 2" class="rounded-lg shadow-2xl">
+          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+            <h4 class="project--title text-2xl text-white font-bold mb-3">
+              Nom du projet 2
+            </h4>
+            <p class="project--text text-gray-200 mb-8">
+              Description du projet 2
+            </p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="assets/images/screenshot_php.png" alt="Projet 3" class="rounded-lg shadow-2xl">
+          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+            <h4 class="project--title text-2xl text-white font-bold mb-3">
+              Nom du projet 3
+            </h4>
+            <p class="project--text text-gray-200 mb-8">
+              Description du projet 3
+            </p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="assets/images/screenshot_php.png" alt="Projet 3" class="rounded-lg shadow-2xl">
+          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+            <h4 class="project--title text-2xl text-white font-bold mb-3">
+              Nom du projet 4
+            </h4>
+            <p class="project--text text-gray-200 mb-8">
+              Description du projet 4
+            </p>
+          </div>
+        </div>
+      
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content" id="modalContent">
+    <div class="swiper-container" id="modalSwiper">
+      <div class="swiper-wrapper" id="modalSwiperWrapper">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Section Contact -->
+    <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+      <div class="img-index w-full md:w-1/2">
+        <img src="assets/images/screenshot_react-native.png" alt="Contact Jean Forteroche" class="rounded-lg shadow-2xl mt-6 md:mt-0">
+      </div>
+      <div class="w-full md:w-1/2 pl-10">
+        <h4 class="text-3xl text-white font-bold mb-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h4>
+        <p class="text-gray-200 mb-8">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+        </p>
+        <!-- <a href="#" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
+          En savoir plus
+        </a> -->
+      </div>
+</section>
+</main>
+
+<footer class="text-gray-600 body-font bg-gray-800 text-white">
+  <div class="container mx-auto px-6 py-4 md:flex md:items-center md:justify-between">
+    <div class="mt-8 md:mt-0 md:order-1" id="copyright">
+        <a data-popover-target="popover-default" type="button" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Mon Portfolio. Tous droits réservés.</a>
+    </div>
+
+    <div class="md:order-2 no-select">
+      <nav class="flex justify-center gap-4">
+        <a href="#about" class="footer--nav text-sm text-gray-300 hover:text-gray-100">À propos</a>
+        <a href="#skills" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Compétences</a>
+        <a href="#projects" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Projets</a>
+        <a href="#contact" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Contact</a>
+      </nav>
+    </div>
+
+    <div class="mt-8 md:mt-0 text-center md:order-0 no-select">
+      <a href="/">
+        <h2 class="footer-me--text text-sm text-gray-300 font-medium">Lucas Blanchard</h2>
+        <p class="footer-me--text text-xs text-gray-400">2022-2023</p>
+      </a>
+    </div>
+
+    <div class="mt-8 md:mt-0 md:order-3">
+      <nav class="flex justify-center gap-4">
+        <a href="https://github.com/usernamap" target="_blank">
+          <i class="footer-icon--circle fab fa-github fa-lg text-gray-300 hover:text-gray-100"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/lucas-blanchard-w1/" target="_blank">
+          <i class="footer-icon--square fab fa-linkedin fa-lg text-gray-300 hover:text-gray-100"></i>
+        </a>
+        <a href="https://[monsite].com" target="_blank">
+          <i class="footer-icon--circle fas fa-globe fa-lg text-gray-300 hover:text-gray-100"></i>
+        </a>
+        <a href="mailto:lucas.blanchard2701@gmail.com" target="_blank">
+          <i class="footer-icon--square fas fa-envelope fa-lg text-gray-300 hover:text-gray-100"></i>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <div data-popover id="popover-default" role="tooltip" class="popover-footer absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity transition-all transform ease-in-out duration-500 scale-95 bg-gray-800 border border-gray-400 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 no-select">
+    <p class="footer--copyright mt-3 mb-3 text-center text-xs text-gray-400">  
+      Les contenus disponibles sur le site <strong>//monsite.com</strong> (images, photos, et plus généralement tout type de données) <br> relèvent des <strong>législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle </strong><br> et sont protégées par le <strong> Code de la Propriété Intellectuelle</strong> en vigueur en France. <br> Tous les droits de reproduction sont <strong>réservés</strong>. <strong> Reproduction interdite. </strong>
+    </p>
+    <p class="footer--copyright text-center text-xs text-gray-400"> Photos : © Lucas Blanchard </p>
+    <p class="footer--copyright text-center text-xs text-gray-400"> Illustrations : Lucas Blanchard </p>
+    <p class="footer--copyright text-center text-xs text-gray-400 mb-3"> Design & Dev : Lucas Blanchard </p>
+  </div>
+  <div data-popper-arrow></div>
+  </div>  
+</footer>
+
+
+
+
+  <!-- apparition -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+  <!-- background -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- scroll -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- carroussel -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- menu -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/darkmode.js"></script>
+  <script src="./js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* espace section */
+.section-style {
+    min-height: 75vh; /* Cette règle fait en sorte que chaque section ait une hauteur minimale égale à la hauteur de la fenêtre du navigateur. */
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Opera and Firefox */
+}
+
+
+/* main */
+main{
+    padding-bottom: 1rem !important;
+}
+
+#cv{
+  position: absolute;
+  z-index: 1;
+}
+
+.img-index {
+  z-index: 0 !important;
+}
+
+.scrollable-div {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.scrollable-content {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    /* enlever la bar de scroll */
+    scrollbar-width: none; /* Firefox */
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* Chrome/Safari/Webkit */
+    }
+}
+
+/* copyright */
+#copyright{
+    cursor: pointer;
+}
+
+/* carrousel project out */
+.swiper-button-prev, .swiper-button-next{
+       margin-top: 1em !important;
+}
+
+/* les deux carroussel */
+.swiper-button-next, .swiper-button-prev {
+     z-index: 1 !important;
+}
+
+/* modal project */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Légèrement transparent */
+  backdrop-filter: blur(8px); /* Flou */
+}
+
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  /* Add Animation */
+  .modal-content {  
+    animation-name: zoom;
+    animation-duration: 1s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close-animation {
+    animation-name: dezoom;
+    animation-duration: 1s;
+  }
+
+  @keyframes dezoom {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
+  }
+  
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
