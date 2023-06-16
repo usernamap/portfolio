@@ -36,6 +36,7 @@ window.onscroll = function() {
   }
 };
 
+
 // background
   function generateParticles(color) {
     particlesJS('particles-js',

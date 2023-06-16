@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Portfolio</title>
-  <link rel="icon" type="image/ico" href="assets/images/favicon.png" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/darkmode.css">
@@ -59,52 +60,67 @@
 
 <!-- Main Content -->
   <main class="container mx-auto px-6 p-10"> 
-    <h2 class="text-4xl font-bold text-center text-white mb-8">
+    <h2 class="text-4xl font-bold text-center text-white mb-8 no-select">
       Bienvenue sur mon Portfolio
     </h2>
 
 <!-- Section A propos -->
-<section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+<section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
     <h4 class="text-3xl text-white font-bold mb-3">
-      Bonjour, je suis <span class="span">Lucas Blanchard</span>
+      Salut ! Je suis <span class="span">Lucas Blanchard</span>
     </h4>
     <p class="text-gray-200 mb-8">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+      Passionné par l'informatique et les nouvelles technologies, je me suis naturellement orienté vers le développement web. <br> <br> Ma curiosité et ma soif d'apprendre me permettent de me tenir constamment à jour sur les dernières avancées technologiques. <br> <br> Je suis convaincu que chaque problème a sa solution et je suis toujours prêt à relever de nouveaux défis pour transformer les idées en réalités.
     </p>
-    <a href="assets/docs/cs_example.pdf" id="cv" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full" download>
-      Télécharger mon CV
-    </a>
+    <div class="btn-cv">
+      <a href="assets/docs/CV_développeur-WEB.pdf" id="cv" class="cvPreview_btn bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full" download>
+        Télécharger mon CV
+      </a>
+      <a href="#" id="cvPreview" class="ml-2 z-10 bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
+        <i class="fas fa-eye"></i>
+      </a>
+    </div>
   </div>
   <div class="img-index w-full md:w-1/2">
-    <img src="assets/images/screenshot_php.png" alt="Jean Forteroche" class="rounded-lg shadow-2xl mt-6 md:mt-0">
+    <img src="assets/images/base/profile.JPG" alt="Jean Forteroche" class="rounded-lg mt-6 md:mt-0">
   </div>
 </section>
 
 
+<div id="cvModal" class="cv-modal no-select">
+  <div class="cv-modal-content" id="cvModalContent">
+    <span class="cv-modal-close">&times;</span>
+    <img src="assets/images/base/CV_développeur-WEB.png" type="application/png" class="img-modal--cv" />
+  </div>
+</div>
+
+
   <!-- Section Compétences -->
-  <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+  <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
     <div class="img-index  w-full md:w-1/2">
-        <img src="assets/images/screenshot_react-native.png" alt="Jean Forteroche" class="rounded-lg shadow-2xl">
-      </div>
-      <div class="w-full md:w-1/2 pl-10">
+        <figure>
+            <img src="assets/images/base/reunion_wac.jpg" alt="Jean Forteroche" class="rounded-lg">
+            <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+        </figure>
+    </div>
+    <div class="w-full md:w-1/2 pl-10">
         <h4 class="text-3xl text-white font-bold mb-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Mes compétences clés en développement web
         </h4>
         <p class="text-gray-200 mb-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+          Grâce à ma formation à la WebAcademy, j'ai acquis une solide base en développement front-end et back-end. <br> <br> Je maîtrise HTML, CSS et JavaScript, avec une expertise particulière en React et Node.js. <br> <br> J'ai également de l'expérience en matière de bases de données avec MySQL et MongoDB. <br> <br> De plus, je suis à l'aise avec les outils de versionnage tels que Git. J'ai une forte orientation vers le développement mobile avec une compétence en React Native. <br> <br> Enfin, j'accorde une grande importance aux bonnes pratiques de codage, à la performance et à l'accessibilité.
         </p>
-        <!-- <a href="#" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
-          En savoir plus
-        </a> -->
-      </div>
-  </section>
+    </div>
+</section>
+
+  
 
 <!-- Section Projets -->
-<section id="projects" class="scrollable-content flex items-center flex-wrap mb-20 section-style">
+<section id="projects" class="scrollable-content flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
     <h4 class="text-3xl text-white font-bold mb-3">
-    Mes projets personnels
+          Mes projets
     </h4>
   </div>
   <div class="w-full md:w-1/2">
@@ -113,52 +129,64 @@
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <img src="assets/images/screenshot_php.png" alt="Projet 1" class="rounded-lg shadow-2xl">
-          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+          <img src="assets/images/projects/my-snapchat/snapchat_result.png" alt="Projet 1" class="rounded-lg">
+          <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
-              Nom du projet 1
+              My Snapchat
             </h4>
             <p class="project--text text-gray-200 mb-8">
-              Description du projet 1
+              Re-création de l’application snapchat - Mobile <br> <br> React Native + API REST
             </p>
           </div>
         </div>
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <img src="assets/images/screenshot_php.png" alt="Projet 2" class="rounded-lg shadow-2xl">
-          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+          <img src="assets/images/projects/free-ads/free-ads_result.png" alt="Projet 2" class="rounded-lg">
+          <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
-              Nom du projet 2
+              Free Ads
             </h4>
             <p class="project--text text-gray-200 mb-8">
-              Description du projet 2
+              Site de petite annonce - Web <br> <br> Laravel + MySQL
             </p>
           </div>
         </div>
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <img src="assets/images/screenshot_php.png" alt="Projet 3" class="rounded-lg shadow-2xl">
-          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+          <img src="assets/images/projects/tweet-academy/tweet_result.png" alt="Projet 3" class="rounded-lg">
+          <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
-              Nom du projet 3
+              Tweet Académie
             </h4>
             <p class="project--text text-gray-200 mb-8">
-              Description du projet 3
+              Recréer un réseau social - Web <br> <br> PHP + MySQL
             </p>
           </div>
         </div>
         <!-- Slide 4 -->
         <div class="swiper-slide">
-          <img src="assets/images/screenshot_php.png" alt="Projet 3" class="rounded-lg shadow-2xl">
-          <div class="bg-gray-800 rounded-lg shadow-2xl p-4">
+          <img src="assets/images/projects/spotify/spotify_result.png" alt="Projet 3" class="rounded-lg">
+          <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
-              Nom du projet 4
+              My Spotify
             </h4>
             <p class="project--text text-gray-200 mb-8">
-              Description du projet 4
+              Création d’un lecteur multimédia online - Web <br> <br> React + API REST + Docker
             </p>
           </div>
         </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="assets/images/projects/my-quizz/my-quizz_result.png" alt="Projet 3" class="rounded-lg">
+          <div class="bg-gray-800 rounded-lg p-4">
+            <h4 class="project--title text-2xl text-white font-bold mb-3">
+              My Quizz
+            </h4>
+            <p class="project--text text-gray-200 mb-8">
+              Développer de quiz en ligne - Web <br> <br> Symfony + MySQL
+            </p>
+          </div>
+         </div>
       
       </div>
       <!-- Add Pagination -->
@@ -170,7 +198,7 @@
   </div>
 </section>
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal no-select">
   <span class="close">&times;</span>
   <div class="modal-content" id="modalContent">
     <div class="swiper-container" id="modalSwiper">
@@ -180,24 +208,29 @@
   </div>
 </div>
 
-
-    <!-- Section Contact -->
-    <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
-      <div class="img-index w-full md:w-1/2">
-        <img src="assets/images/screenshot_react-native.png" alt="Contact Jean Forteroche" class="rounded-lg shadow-2xl mt-6 md:mt-0">
-      </div>
-      <div class="w-full md:w-1/2 pl-10">
-        <h4 class="text-3xl text-white font-bold mb-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h4>
-        <p class="text-gray-200 mb-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-        </p>
-        <!-- <a href="#" class="bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
-          En savoir plus
-        </a> -->
-      </div>
+<!-- Section Contact -->
+<section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
+  <div class="img-index w-full md:w-1/2 no-select">
+    <figure>
+      <img src="assets/images/base/group_wac.jpg" alt="Contact Lucas Blanchard" class="rounded-lg  mt-6 md:mt-0">
+      <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+    </figure>
+  </div>
+  <div class="w-full md:w-1/2 pl-10">
+    <h4 class="text-3xl text-white font-bold mb-3 no-select">
+      Envie de discuter d'un projet ou d'une collaboration ?
+    </h4>
+    <p class="text-gray-200 mb-8 no-select">
+      Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. <br> <br> Que vous ayez une idée à développer ou que vous ayez besoin d'un développeur web pour renforcer votre équipe, n'hésitez pas à me contacter. <br> <br> Je m'efforce de répondre à tous les messages dans les plus brefs délais.
+    </p>
+    <a href="mailto:lucas.blanchard2701@gmail.com" class="btn-mail bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full no-select">
+       Envoyez-moi un mail
+    </a>
+    <span class="block mt-2 text-sm text-white opacity-60 ml-2"> <span class="no-select"> à </span>lucas.blanchard2701@gmail.com</span>
+  </div>
 </section>
+
+
 </main>
 
 <footer class="text-gray-600 body-font bg-gray-800 text-white">
@@ -230,7 +263,7 @@
         <a href="https://www.linkedin.com/in/lucas-blanchard-w1/" target="_blank">
           <i class="footer-icon--square fab fa-linkedin fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
-        <a href="https://[monsite].com" target="_blank">
+        <a href="https://lucas-blanchard.com" target="_blank">
           <i class="footer-icon--circle fas fa-globe fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
         <a href="mailto:lucas.blanchard2701@gmail.com" target="_blank">
@@ -242,7 +275,7 @@
 
   <div data-popover id="popover-default" role="tooltip" class="popover-footer absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity transition-all transform ease-in-out duration-500 scale-95 bg-gray-800 border border-gray-400 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 no-select">
     <p class="footer--copyright mt-3 mb-3 text-center text-xs text-gray-400">  
-      Les contenus disponibles sur le site <strong>//monsite.com</strong> (images, photos, et plus généralement tout type de données) <br> relèvent des <strong>législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle </strong><br> et sont protégées par le <strong> Code de la Propriété Intellectuelle</strong> en vigueur en France. <br> Tous les droits de reproduction sont <strong>réservés</strong>. <strong> Reproduction interdite. </strong>
+      Les contenus disponibles sur le site <strong>portfolio.lucas-blanchard.com</strong> (images, photos, et plus généralement tout type de données) <br> relèvent des <strong>législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle </strong><br> et sont protégées par le <strong> Code de la Propriété Intellectuelle</strong> en vigueur en France. <br> Tous les droits de reproduction sont <strong>réservés</strong>. <strong> Reproduction interdite. </strong>
     </p>
     <p class="footer--copyright text-center text-xs text-gray-400"> Photos : © Lucas Blanchard </p>
     <p class="footer--copyright text-center text-xs text-gray-400"> Illustrations : Lucas Blanchard </p>

@@ -64,7 +64,7 @@ main{
      z-index: 1 !important;
 }
 
-/* modal project */
+/* modal pour la section "projects" */
 .modal {
   display: none;
   position: fixed;
@@ -79,7 +79,6 @@ main{
   backdrop-filter: blur(8px); /* Flou */
 }
 
-  
   .modal-content {
     margin: auto;
     display: block;
@@ -103,7 +102,12 @@ main{
     text-decoration: none;
     cursor: pointer;
   }
-  
+
+  .img-fit {
+    width: 100%;  /* or any size you want */
+    height: 400px;  /* or any size you want */
+    object-fit: cover;
+  }
   
   /* Add Animation */
   .modal-content {  
@@ -125,6 +129,30 @@ main{
     from {transform:scale(1)} 
     to {transform:scale(0)}
   }
+
+  /* modal pour la section "À propos" */
+
+   /* Add Animation */
+   .cv-modal-content {  
+    animation-name: zoom;
+    animation-duration: 1s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close-animation {
+    animation-name: dezoom;
+    animation-duration: 1s;
+  }
+
+  @keyframes dezoom {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
+  }
+
   
   
   /* The Close Button */
@@ -144,4 +172,122 @@ main{
     text-decoration: none;
     cursor: pointer;
   }
-  
+
+  .icon-project{
+    height: fit-content;
+    margin-right: 0.2em;
+  }
+
+  .span-time_person--project{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 31.1em;
+  }
+
+  .span-difficulty--project{
+    position: absolute;
+    top: 31.4em;
+    right: 20.8em;
+  }
+
+  .span-star--project{
+    display: flex;
+    position: absolute;
+    top: 31.9em;
+    right: 19em;
+  }
+
+.description-technique--project{
+  font-size: small; 
+  color: #cbd5e0;
+  position: absolute;
+  top: 32em;
+}
+
+/* tooltip for icon */
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-container .tooltiptext {
+  visibility: hidden;
+  width: 12em;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 4em;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip-container:hover .tooltiptext {
+  visibility: visible;
+}
+
+  /* modal pour la section "À propos" */
+  .no-scroll {
+    overflow: hidden;
+    height: 100%; /* pour IE6 */
+}
+
+
+.cv-modal {
+  display: none;
+  position: fixed;
+  z-index: 11;
+  padding-bottom: 2%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.cv-modal-content {
+  margin: auto;
+  width: 80%;
+  height: 95%;
+}
+
+.cv-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cv-modal-close:hover,
+.cv-modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.img-modal--cv{
+  padding: 10em;
+}
+
+#cv{
+  position: sticky;
+  z-index: 2;
+}
+
+#cvPreview{
+  position: sticky !important;
+  z-index: 2;
+}
+
+/* section "Contact" */
+
+.btn-mail {
+  position: relative !important;
+  z-index: 11;
+}
