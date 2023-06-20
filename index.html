@@ -4,66 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Portfolio</title>
+
+   <!-- SEO optimization -->
+   <meta name="description" content="Portfolio de Lucas Blanchard">
+   <meta name="keywords" content="portfolio, presentation , projet, web@cademy, développeur, web">
+   <title>Portfolio</title>
   <!-- favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/darkmode.css">
   <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/output.css">
   <!-- defilement -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <!-- icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body class="font-sans text-gray-900">
   <div id="particles-js"></div>
 
-  <header class="shadow-md dark:bg-gray-800">
-    <nav class="container mx-auto px-6 py-3">
-      <div class="flex justify-between items-center">
-          <a href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
-          <div class="md:hidden" x-data="{ open: false }">
-              <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
-                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 fill-current">
-                      <path fill-rule="evenodd" d="M4 5a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zm1 7a1 1 0 100 2h14a1 1 0 100-2H5zm1 7a1 1 0 100 2h14a1 1 0 100-2H6z"></path>
-                  </svg>
-              </button>
-              <div x-show="open" 
-                   x-transition:enter="transition ease-out duration-300"
-                   x-transition:enter-start="opacity-0 transform scale-90"
-                   x-transition:enter-end="opacity-100 transform scale-100"
-                   x-transition:leave="transition ease-in duration-300"
-                   x-transition:leave-start="opacity-100 transform scale-100"
-                   x-transition:leave-end="opacity-0 transform scale-90"
-                   class="mt-2 space-y-2 bg-gray-800 rounded p-2">
-                  <a href="#about" class="no-select block text-sm text-gray-200 hover:text-gray-300">À propos</a>
-                  <a href="#skills" class="no-select block text-sm text-gray-200 hover:text-gray-300">Compétences</a>
-                  <a href="#projects" class="no-select block text-sm text-gray-200 hover:text-gray-300">Projets</a>
-                  <a href="#contact" class="no-select block text-sm text-gray-200 hover:text-gray-300">Contact</a>
-              </div>
-          </div>
-          <div class="hidden md:flex space-x-1">
-              <a href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
-              <a href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
-              <a href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
-              <a href="#contact" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Contact</a>
-          </div>
-          <input id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
-      </div>
-  </nav>
+  <header class="shadow-md dark:bg-gray-800 fixed w-full" x-data="{ open: true }">
+    <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400 absolute right-0 bottom-[-1rem]">
+      <svg x-show="open" viewBox="0 0 200 200" fill="currentColor" class="h-6 w-6 fill-current ">
+        <path d="M114,74.5a19.92,19.92,0,0,0-28.5,0L57,103a9.9,9.9,0,0,0,14,14L99.5,88.5,128,117a9.9,9.9,0,0,0,14-14Z"></path><path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Z"></path>
+      </svg>
+      <svg x-show="!open" viewBox="0 0 200 200" fill="currentColor" class="h-6 w-6 fill-current">
+        <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm28.5-81.5-28.5,28L71.5,83a9.9,9.9,0,0,0-14,14L86,125.5a19.92,19.92,0,0,0,28.5,0L143,97a9.67,9.67,0,0,0,0-14C138.5,79.5,132,79.5,128.5,83.5Z"></path>
+      </svg>
+  </button>
   
-  
-  </nav>
-  
-  </header>
+    <nav class="container mx-auto px-6 py-3" x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90">
+        <div class="flex justify-between items-center">
+            <a href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 fill-current">
+                        <path fill-rule="evenodd" d="M4 5a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zm1 7a1 1 0 100 2h14a1 1 0 100-2H5zm1 7a1 1 0 100 2h14a1 1 0 100-2H6z"></path>
+                    </svg>
+                </button>
+                <div x-show="open" 
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90"
+                    class="mt-2 space-y-2 bg-gray-800 rounded p-2">
+                    <a href="#about" class="no-select block text-sm text-gray-200 hover:text-gray-300">À propos</a>
+                    <a href="#skills" class="no-select block text-sm text-gray-200 hover:text-gray-300">Compétences</a>
+                    <a href="#projects" class="no-select block text-sm text-gray-200 hover:text-gray-300">Projets</a>
+                    <a href="#contact" class="no-select block text-sm text-gray-200 hover:text-gray-300">Contact</a>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-1">
+                <a href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
+                <a href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
+                <a href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
+                <a href="#contact" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Contact</a>
+            </div>
+            <input id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
+        </div>
+    </nav>
+</header>
 
 <!-- Main Content -->
-  <main class="container mx-auto px-6 p-10"> 
+  <main class="mx-auto py-10 mt-20"> 
     <h2 class="text-4xl font-bold text-center text-white mb-8 no-select">
       Bienvenue sur mon Portfolio
     </h2>
-
+  
 <!-- Section A propos -->
 <section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
@@ -83,9 +100,12 @@
     </div>
   </div>
   <div class="img-index w-full md:w-1/2">
-    <img src="assets/images/base/profile.JPG" alt="Jean Forteroche" class="rounded-lg mt-6 md:mt-0">
+    <img src="assets/images/base/profile.JPG" alt="Photo de profile de Lucas Blanchard" width="70%" class="rounded-lg mt-6 md:mt-0">
   </div>
 </section>
+<div class="container-button--cv">
+  <button id="button--cv"></button>
+</div>
 
 
 <div id="cvModal" class="cv-modal no-select">
@@ -100,8 +120,10 @@
   <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
     <div class="img-index  w-full md:w-1/2">
         <figure>
-            <img src="assets/images/base/reunion_wac.jpg" alt="Jean Forteroche" class="rounded-lg">
-            <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+            <img src="assets/images/base/reunion_wac.jpg" width="70%"  alt="Photo de la réunion de la Web@Académie" class="rounded-lg">
+            <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
+              <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+            </a>
         </figure>
     </div>
     <div class="w-full md:w-1/2 pl-10">
@@ -117,19 +139,21 @@
   
 
 <!-- Section Projets -->
-<section id="projects" class="scrollable-content flex items-center flex-wrap mb-20 section-style no-select">
-  <div class="w-full md:w-1/2">
-    <h4 class="text-3xl text-white font-bold mb-3">
-          Mes projets
-    </h4>
+<section id="projects" class="scrollable-content flex mb-20 section-style no-select overflow-x-hidden">
+  <div class="w-full">
+    <div class="title-container flex items-center flex-col">
+      <h4 class="title--projects text-3xl text-white font-bold mb-3">
+        Mes projets
+      </h4>
+    </div>
   </div>
-  <div class="w-full md:w-1/2">
+  <div class="slide-container w-full md:w-1/2 relative left-32 ">
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-snapchat/snapchat_result.png" alt="Projet 1" class="rounded-lg">
+          <img src="assets/images/projects/my-snapchat/snapchat_result.png" alt="Projet My Snapchat" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Snapchat
@@ -141,7 +165,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/free-ads/free-ads_result.png" alt="Projet 2" class="rounded-lg">
+          <img src="assets/images/projects/free-ads/free-ads_result.png" alt="Projet Free Ads" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               Free Ads
@@ -153,7 +177,7 @@
         </div>
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/tweet-academy/tweet_result.png" alt="Projet 3" class="rounded-lg">
+          <img src="assets/images/projects/tweet-academy/tweet_result.png" alt="Projet Tweet Académie" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               Tweet Académie
@@ -165,7 +189,7 @@
         </div>
         <!-- Slide 4 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/spotify/spotify_result.png" alt="Projet 3" class="rounded-lg">
+          <img src="assets/images/projects/spotify/spotify_result.png" alt="Projet Projet My Spotify" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Spotify
@@ -175,9 +199,9 @@
             </p>
           </div>
         </div>
-        <!-- Slide 3 -->
+        <!-- Slide 5 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-quizz/my-quizz_result.png" alt="Projet 3" class="rounded-lg">
+          <img src="assets/images/projects/my-quizz/my-quizz_result.png" alt="Projet My Quizz" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Quizz
@@ -197,6 +221,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <div id="myModal" class="modal no-select">
   <span class="close">&times;</span>
@@ -212,8 +237,10 @@
 <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
   <div class="img-index w-full md:w-1/2 no-select">
     <figure>
-      <img src="assets/images/base/group_wac.jpg" alt="Contact Lucas Blanchard" class="rounded-lg  mt-6 md:mt-0">
-      <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+      <img src="assets/images/base/group_wac.jpg" width="70%"  alt="Contact Lucas Blanchard" class="rounded-lg  mt-6 md:mt-0 z-[-1]">
+      <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
+        <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+      </a>
     </figure>
   </div>
   <div class="w-full md:w-1/2 pl-10">

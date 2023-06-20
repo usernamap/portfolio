@@ -45,7 +45,7 @@ body{
   transition: background-color 500ms;
 }
 
-body .header {
+body header {
   background-color: #1a202c;
 }
 
@@ -83,7 +83,7 @@ body.light {
 }
 
 /* header */
-body.light .header {
+body.light header {
   background-color: #f7fafc;
 }
 body.light .span {

@@ -36,6 +36,24 @@ window.onscroll = function() {
   }
 };
 
+/* button pour télécharger le cv */
+$(function() {
+  $( "#button--cv" ).click(function() {
+    $( "#button--cv" ).addClass( "onclic", 250, validate);
+  });
+
+  function validate() {
+    setTimeout(function() {
+      $( "#button--cv" ).removeClass( "onclic" );
+      $( "#button--cv" ).addClass( "validate", 450, callback );
+    }, 2250 );
+  }
+    function callback() {
+      setTimeout(function() {
+        $( "#button--cv" ).removeClass( "validate" );
+      }, 1250 );
+    }
+  });
 
 // background
   function generateParticles(color) {
