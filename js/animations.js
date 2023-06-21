@@ -1,16 +1,15 @@
-
-// apparition
+// APPARITION DES ELEMENTS (GSAP)
 gsap.from("header", {duration: 0.5, y: -300, opacity: 0, scale: 0.5});
 // gsap.from("main", {duration: 1.5, y: -300, opacity: 0, scale: 0.5});
 gsap.from("footer", {duration: 3, y: -300, opacity: 0, scale: 0.5});
 
-// scroll
+// APPARITION DES ELEMENTS (SCROLLREVEAL)
 ScrollReveal().reveal('#about', { delay: 200 });
 ScrollReveal().reveal('#skills', { delay: 600 });
 ScrollReveal().reveal('#projects', { delay: 700 });
 ScrollReveal().reveal('#contact', { delay: 800 });
 
-// swiper uniquement sur la section projects (pour éviter les bugs)
+// CAROUSEL (SWIPER)
 var swiperInitiated = false;
 window.onscroll = function() {
   var projectsSection = document.getElementById('projects');
@@ -36,26 +35,7 @@ window.onscroll = function() {
   }
 };
 
-/* button pour télécharger le cv */
-$(function() {
-  $( "#button--cv" ).click(function() {
-    $( "#button--cv" ).addClass( "onclic", 250, validate);
-  });
-
-  function validate() {
-    setTimeout(function() {
-      $( "#button--cv" ).removeClass( "onclic" );
-      $( "#button--cv" ).addClass( "validate", 450, callback );
-    }, 2250 );
-  }
-    function callback() {
-      setTimeout(function() {
-        $( "#button--cv" ).removeClass( "validate" );
-      }, 1250 );
-    }
-  });
-
-// background
+// BACKGROUND (PARTICLES.JS)
   function generateParticles(color) {
     particlesJS('particles-js',
     {

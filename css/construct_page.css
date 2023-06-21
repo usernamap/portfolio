@@ -1,8 +1,8 @@
- body{ 
+/* ALL */
+body{ 
     margin:0; 
     font:normal 75% Arial, Helvetica, sans-serif; 
 }
-
 h1{
     font-size: 3em !important;
     font-weight: 700 !important;
@@ -13,12 +13,23 @@ h1{
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
-
  canvas{ 
     display: block; 
     vertical-align: bottom; 
 }
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 
+
+
+/* BACKGROUND */
   /* ---- particles.js container ---- */ 
   #particles-js{ 
     position:absolute; 
@@ -30,14 +41,3 @@ h1{
     background-position: 50% 50%; 
 }
 
-/* no select */
-
-.no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}

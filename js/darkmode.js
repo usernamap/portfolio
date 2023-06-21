@@ -1,10 +1,10 @@
 const toggle = document.querySelector('#toggleDarkMode');
 
-// Check if the 'mode' data exists in the local storage
+// SI le mode existe dans le local storage
 if (localStorage.getItem('mode')) {
   let mode = localStorage.getItem('mode');
   
-  // If mode is 'light', check the toggle and add the class 'light' to the body
+  // Si le mode est light, on coche la case et on ajoute la classe 'light' au body
   if (mode === 'light') {
     toggle.checked = true;
     document.body.classList.add('light');
@@ -13,23 +13,23 @@ if (localStorage.getItem('mode')) {
     document.body.classList.remove('light');
   }
 } else {
-  // If no 'mode' data exists in the local storage, check the time
+  // SI le mode n'existe pas dans le local storage
   const hours = new Date().getHours();
   toggle.checked = hours < 7 || hours > 20;
 
-  // If it's daytime, add the class 'light' to the body and store 'light' in the local storage
+  // SI l'heure est inférieure à 7 ou supérieure à 20, on coche la case et on ajoute la classe 'light' au body
   if (toggle.checked) {
     document.body.classList.add('light');
     localStorage.setItem('mode', 'light');
   } else {
-    // If it's night, remove the class 'light' from the body and store 'dark' in the local storage
+    // Si l'heure est supérieure à 7 et inférieure à 20, on décoche la case et on supprime la classe 'light' du body
     document.body.classList.remove('light');
     localStorage.setItem('mode', 'dark');
   }
 }
 
 toggle.addEventListener('change', function() {
-  // Toggle the class 'light' on the body
+  // Toggle pour ajouter ou supprimer la classe 'light' du body
   document.body.classList.toggle('light');
 
  if (window.pJSDom && window.pJSDom.length > 0 && window.pJSDom[0].pJS.particles) {
@@ -39,7 +39,7 @@ toggle.addEventListener('change', function() {
   generateParticles(toggle.checked ? '#000000' : '#ffffff');
 
   
-  // If the class 'light' is on the body, store 'light' in the local storage, else store 'dark'
+  // Si la case est cochée, on stocke 'light' dans le local storage
   if (document.body.classList.contains('light')) {
     localStorage.setItem('mode', 'light');
   } else {

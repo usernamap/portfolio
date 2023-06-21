@@ -1,8 +1,4 @@
-/* espace section */
-.section-style {
-    min-height: 75vh; /* Cette règle fait en sorte que chaque section ait une hauteur minimale égale à la hauteur de la fenêtre du navigateur. */
-}
-
+/* ALL */
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -12,8 +8,44 @@
   user-select: none; /* Non-prefixed version, currently
                               supported by Chrome, Opera and Firefox */
 }
+.scrollable-div {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.scrollable-content {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 
-/* header */
+  /* enlever la bar de scroll */
+  scrollbar-width: none; /* Firefox */
+
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* Chrome/Safari/Webkit */
+  }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* HEADER */
 header{
   top: 0;
     position: fixed;
@@ -21,261 +53,42 @@ header{
     transition: all 0.5s ease;
 }
 
-/* main */
+
+/* MAIN */
 main{
-    padding-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
 }
-
-#cv{
-  position: absolute;
-  z-index: 1;
+.section-style {
+  min-height: 75vh; /* Cette règle fait en sorte que chaque section ait une hauteur minimale égale à la hauteur de la fenêtre du navigateur. */
 }
-
 .img-index {
   z-index: 0 !important;
 }
-
-
-/* SECTIONS  */
 
 #about, #skills, #contact{
   padding-left: 7em;
 }
 
+
+/* SECTION ABOUT */
 #about{
   padding-top: 7em;
 }
-
-#skills {
-  padding-top: 11em;
+#cv{
+  position: sticky;
+  z-index: 2;
 }
-
-#projects {
-  display: flex;
-  flex-direction: column;
-  padding-top: 11em;
+#cvPreview{
+  position: sticky !important;
+  z-index: 2;
 }
-
-.title--projects {
-    margin-bottom: 3em;
+.profile-img--about{
+  width: 70%;
 }
-
-.slide-container{
-  width: 40%;
+.no-scroll {
+  overflow: hidden;
+  height: 100%; /* pour IE6 */
 }
-
-
-.scrollable-div {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-.scrollable-content {
-    overflow-y: scroll;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-
-    /* enlever la bar de scroll */
-    scrollbar-width: none; /* Firefox */
-
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-
-    &::-webkit-scrollbar {
-        width: 0px;
-        background: transparent; /* Chrome/Safari/Webkit */
-    }
-}
-
-/* copyright */
-#copyright{
-    cursor: pointer;
-}
-
-/* carrousel project out */
-.swiper-button-prev, .swiper-button-next{
-  display: none !important;
-
-}
-
-/* les deux carroussel */
-.swiper-button-next, .swiper-button-prev {
-     z-index: 1 !important;
-}
-
-/* modal pour la section "projects" */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4); /* Légèrement transparent */
-  backdrop-filter: blur(8px); /* Flou */
-}
-
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .img-fit {
-    width: 100%;  /* or any size you want */
-    height: 400px;  /* or any size you want */
-    object-fit: cover;
-  }
-  
-  /* Add Animation */
-  .modal-content {  
-    animation-name: zoom;
-    animation-duration: 1s;
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  .close-animation {
-    animation-name: dezoom;
-    animation-duration: 1s;
-  }
-
-  @keyframes dezoom {
-    from {transform:scale(1)} 
-    to {transform:scale(0)}
-  }
-
-  /* modal pour la section "À propos" */
-
-   /* Add Animation */
-   .cv-modal-content {  
-    animation-name: zoom;
-    animation-duration: 1s;
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  .close-animation {
-    animation-name: dezoom;
-    animation-duration: 1s;
-  }
-
-  @keyframes dezoom {
-    from {transform:scale(1)} 
-    to {transform:scale(0)}
-  }
-
-  
-  
-  /* The Close Button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .icon-project{
-    height: fit-content;
-    margin-right: 0.2em;
-  }
-
-  .span-time_person--project{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 31.1em;
-  }
-
-  .span-difficulty--project{
-    position: absolute;
-    top: 31.4em;
-    right: 20.8em;
-  }
-
-  .span-star--project{
-    display: flex;
-    position: absolute;
-    top: 31.9em;
-    right: 19em;
-  }
-
-.description-technique--project{
-  font-size: small; 
-  color: #cbd5e0;
-  position: absolute;
-  top: 32em;
-}
-
-/* tooltip for icon */
-
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip-container .tooltiptext {
-  visibility: hidden;
-  width: 12em;
-  color: #fff;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: 4em;
-  left: 50%;
-  margin-left: -60px;
-}
-
-.tooltip-container:hover .tooltiptext {
-  visibility: visible;
-}
-
-  /* modal pour la section "À propos" */
-  .no-scroll {
-    overflow: hidden;
-    height: 100%; /* pour IE6 */
-}
-
-
 .cv-modal {
   display: none;
   position: fixed;
@@ -309,23 +122,143 @@ main{
   cursor: pointer;
 }
 
-/* .img-modal--cv{
-  padding: 10em;
-} */
 
-#cv{
-  position: sticky;
-  z-index: 2;
+/* SECTION SKILLS */
+#skills {
+  padding-top: 11em;
+}
+.reunion-img--skills{
+  width: 70%;
 }
 
-#cvPreview{
-  position: sticky !important;
-  z-index: 2;
+
+/* SECTION PROJECTS */
+#projects {
+  display: flex;
+  flex-direction: column;
+  padding-top: 11em;
+}
+.title--projects {
+  margin-bottom: 3em;
+}
+.slide-container{
+  width: 40%;
+}
+/* carrousel project exterieur */
+.swiper-button-prev, .swiper-button-next{
+  display: none !important;
 }
 
-/* section "Contact" */
+/* les deux carroussel */
+.swiper-button-next, .swiper-button-prev {
+     z-index: 1 !important;
+}
 
+/* modal pour la section "projects" */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Légèrement transparent */
+  backdrop-filter: blur(8px); /* Flou */
+}
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .img-fit {
+    width: 100%;  /* or any size you want */
+    height: 400px;  /* or any size you want */
+    object-fit: cover;
+  }
+  .icon-project{
+    height: fit-content;
+    margin-right: 0.2em;
+  }
+  .span-time_person--project{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 31.1em;
+  }
+  .span-difficulty--project{
+    position: absolute;
+    top: 31.4em;
+    right: 20.8em;
+  }
+  .span-star--project{
+    display: flex;
+    position: absolute;
+    top: 31.9em;
+    right: 19em;
+  }
+.description-technique--project{
+  font-size: small; 
+  color: #cbd5e0;
+  position: absolute;
+  top: 32em;
+}
+/* tooltip for icon */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-container .tooltiptext {
+  visibility: hidden;
+  width: 12em;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 4em;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip-container:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+/* SECTION CONTACT */
+.group-img--contact{
+  width: 70%;
+}
 .btn-mail {
   position: relative !important;
-  z-index: 11;
+  z-index: 0 !important;
 }
+
+/* FOOTER */
+#copyright{
+  cursor: pointer;
+}
+
+
+
+

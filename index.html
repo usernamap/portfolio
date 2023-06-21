@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- SEO OPTIMIZATION -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-   <!-- SEO optimization -->
-   <meta name="description" content="Portfolio de Lucas Blanchard">
-   <meta name="keywords" content="portfolio, presentation , projet, web@cademy, développeur, web">
-   <title>Portfolio</title>
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon/favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="Portfolio de Lucas Blanchard">
+  <meta name="keywords" content="portfolio, presentation , projet, web@cademy, développeur, web">
+  <meta name="author" content="Lucas Blanchard">
+  <meta name="robots" content="index, follow"> 
+  <meta name="revisit-after" content="3 month">
+  <meta name="language" content="French">
+  <meta name="distribution" content="global">
+  <title>Portfolio</title>
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon.ico">
+  <!-- STYLES CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/darkmode.css">
   <link rel="stylesheet" href="css/animation.css">
-  <link rel="stylesheet" href="css/output.css">
-  <!-- defilement -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <!-- icon -->
+  <!-- TAILWIND -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <!-- FONT AWESOME (ICON) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
+
 <body class="font-sans text-gray-900">
+  <!-- BACKGROUND (particles.js) -->
   <div id="particles-js"></div>
 
+  <!-- HEADER -->
   <header class="shadow-md dark:bg-gray-800 fixed w-full" x-data="{ open: true }">
     <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400 absolute right-0 bottom-[-1rem]">
       <svg x-show="open" viewBox="0 0 200 200" fill="currentColor" class="h-6 w-6 fill-current ">
@@ -34,7 +41,7 @@
         <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm28.5-81.5-28.5,28L71.5,83a9.9,9.9,0,0,0-14,14L86,125.5a19.92,19.92,0,0,0,28.5,0L143,97a9.67,9.67,0,0,0,0-14C138.5,79.5,132,79.5,128.5,83.5Z"></path>
       </svg>
   </button>
-  
+  <!-- NAV -->
     <nav class="container mx-auto px-6 py-3" x-show="open"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 transform scale-90"
@@ -75,13 +82,13 @@
     </nav>
 </header>
 
-<!-- Main Content -->
-  <main class="mx-auto py-10 mt-20"> 
-    <h2 class="text-4xl font-bold text-center text-white mb-8 no-select">
-      Bienvenue sur mon Portfolio
-    </h2>
+<!-- MAIN -->
+<main class="mx-auto py-10 mt-20"> 
+  <h2 class="text-4xl font-bold text-center text-white mb-8 no-select">
+    Bienvenue sur mon Portfolio
+  </h2>
   
-<!-- Section A propos -->
+<!-- SECTION ABOUT -->
 <section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
     <h4 class="text-3xl text-white font-bold mb-3">
@@ -100,31 +107,29 @@
     </div>
   </div>
   <div class="img-index w-full md:w-1/2">
-    <img src="assets/images/base/profile.JPG" alt="Photo de profile de Lucas Blanchard" width="70%" class="rounded-lg mt-6 md:mt-0">
+    <img src="assets/images/base/profile.webp" alt="Photo de profile de Lucas Blanchard" class="profile-img--about rounded-lg mt-6 md:mt-0">
   </div>
 </section>
 <div class="container-button--cv">
   <button id="button--cv"></button>
 </div>
-
-
+<!-- MODAL ABOUT -->
 <div id="cvModal" class="cv-modal no-select">
   <div class="cv-modal-content" id="cvModalContent">
     <span class="cv-modal-close">&times;</span>
-    <img src="assets/images/base/CV_développeur-WEB.png" type="application/png" class="img-modal--cv" />
+    <img src="assets/images/base/CV_développeur-WEB.webp"  alt="image du CV" class="img-modal--cv">
   </div>
 </div>
 
-
-  <!-- Section Compétences -->
+  <!-- SECTION SKILLS -->
   <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
     <div class="img-index  w-full md:w-1/2">
-        <figure>
-            <img src="assets/images/base/reunion_wac.jpg" width="70%"  alt="Photo de la réunion de la Web@Académie" class="rounded-lg">
+            <img src="assets/images/base/reunion_wac.webp" alt="Photo de la réunion de la Web@Académie" class="reunion-img--skills rounded-lg">
             <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
-              <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+              <figure>
+                <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+              </figure>
             </a>
-        </figure>
     </div>
     <div class="w-full md:w-1/2 pl-10">
         <h4 class="text-3xl text-white font-bold mb-3">
@@ -136,9 +141,7 @@
     </div>
 </section>
 
-  
-
-<!-- Section Projets -->
+<!-- SECTIONS PROJECTS -->
 <section id="projects" class="scrollable-content flex mb-20 section-style no-select overflow-x-hidden">
   <div class="w-full">
     <div class="title-container flex items-center flex-col">
@@ -153,7 +156,7 @@
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-snapchat/snapchat_result.png" alt="Projet My Snapchat" class="rounded-lg">
+          <img src="assets/images/projects/my-snapchat/snapchat_result.webp" alt="Projet My Snapchat" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Snapchat
@@ -165,7 +168,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/free-ads/free-ads_result.png" alt="Projet Free Ads" class="rounded-lg">
+          <img src="assets/images/projects/free-ads/free-ads_result.webp" alt="Projet Free Ads" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               Free Ads
@@ -177,7 +180,7 @@
         </div>
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/tweet-academy/tweet_result.png" alt="Projet Tweet Académie" class="rounded-lg">
+          <img src="assets/images/projects/tweet-academy/tweet_result.webp" alt="Projet Tweet Académie" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               Tweet Académie
@@ -189,7 +192,7 @@
         </div>
         <!-- Slide 4 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/spotify/spotify_result.png" alt="Projet Projet My Spotify" class="rounded-lg">
+          <img src="assets/images/projects/spotify/spotify_result.webp" alt="Projet Projet My Spotify" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Spotify
@@ -201,7 +204,7 @@
         </div>
         <!-- Slide 5 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-quizz/my-quizz_result.png" alt="Projet My Quizz" class="rounded-lg">
+          <img src="assets/images/projects/my-quizz/my-quizz_result.webp" alt="Projet My Quizz" class="rounded-lg">
           <div class="bg-gray-800 rounded-lg p-4">
             <h4 class="project--title text-2xl text-white font-bold mb-3">
               My Quizz
@@ -211,7 +214,6 @@
             </p>
           </div>
          </div>
-      
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -221,8 +223,7 @@
     </div>
   </div>
 </section>
-</div>
-
+<!-- MODAL PROJECTS -->
 <div id="myModal" class="modal no-select">
   <span class="close">&times;</span>
   <div class="modal-content" id="modalContent">
@@ -233,15 +234,15 @@
   </div>
 </div>
 
-<!-- Section Contact -->
+<!-- SECTION CONTACT -->
 <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
   <div class="img-index w-full md:w-1/2 no-select">
-    <figure>
-      <img src="assets/images/base/group_wac.jpg" width="70%"  alt="Contact Lucas Blanchard" class="rounded-lg  mt-6 md:mt-0 z-[-1]">
+      <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1]">
       <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
-        <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+        <figure>
+          <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+        </figure>
       </a>
-    </figure>
   </div>
   <div class="w-full md:w-1/2 pl-10">
     <h4 class="text-3xl text-white font-bold mb-3 no-select">
@@ -256,16 +257,16 @@
     <span class="block mt-2 text-sm text-white opacity-60 ml-2"> <span class="no-select"> à </span>lucas.blanchard2701@gmail.com</span>
   </div>
 </section>
-
-
 </main>
 
+<!-- FOOTER -->
 <footer class="text-gray-600 body-font bg-gray-800 text-white">
+  <!-- COPYRIGHT -->
   <div class="container mx-auto px-6 py-4 md:flex md:items-center md:justify-between">
     <div class="mt-8 md:mt-0 md:order-1" id="copyright">
-        <a data-popover-target="popover-default" type="button" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Mon Portfolio. Tous droits réservés.</a>
+      <a href="#" data-popover-target="popover-default" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Lucas BLANCHARD. Tous droits réservés.</a>
     </div>
-
+  <!-- NAV -->
     <div class="md:order-2 no-select">
       <nav class="flex justify-center gap-4">
         <a href="#about" class="footer--nav text-sm text-gray-300 hover:text-gray-100">À propos</a>
@@ -274,14 +275,14 @@
         <a href="#contact" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Contact</a>
       </nav>
     </div>
-
+  <!-- ME -->
     <div class="mt-8 md:mt-0 text-center md:order-0 no-select">
       <a href="/">
         <h2 class="footer-me--text text-sm text-gray-300 font-medium">Lucas Blanchard</h2>
-        <p class="footer-me--text text-xs text-gray-400">2022-2023</p>
+        <p class="footer-me--text text-xs text-gray-400">2004-2023</p>
       </a>
     </div>
-
+<!-- RESEAUX -->
     <div class="mt-8 md:mt-0 md:order-3">
       <nav class="flex justify-center gap-4">
         <a href="https://github.com/usernamap" target="_blank">
@@ -299,7 +300,7 @@
       </nav>
     </div>
   </div>
-
+<!-- POPOVER COPYRIGHT -->
   <div data-popover id="popover-default" role="tooltip" class="popover-footer absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity transition-all transform ease-in-out duration-500 scale-95 bg-gray-800 border border-gray-400 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 no-select">
     <p class="footer--copyright mt-3 mb-3 text-center text-xs text-gray-400">  
       Les contenus disponibles sur le site <strong>portfolio.lucas-blanchard.com</strong> (images, photos, et plus généralement tout type de données) <br> relèvent des <strong>législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle </strong><br> et sont protégées par le <strong> Code de la Propriété Intellectuelle</strong> en vigueur en France. <br> Tous les droits de reproduction sont <strong>réservés</strong>. <strong> Reproduction interdite. </strong>
@@ -309,31 +310,24 @@
     <p class="footer--copyright text-center text-xs text-gray-400 mb-3"> Design & Dev : Lucas Blanchard </p>
   </div>
   <div data-popper-arrow></div>
-  </div>  
 </footer>
 
-
-
-
-  <!-- apparition -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-
-  <!-- background -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-  <!-- scroll -->
+<!-- SCRIPTS  JAVASCRIPT -->
+<!-- APPARITION DES ELEMENTS (GSAP) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<!-- APPARITION DES ELEMENTS (SCROLLREVEAL) -->
   <script src="https://unpkg.com/scrollreveal"></script>
-
-  <!-- carroussel -->
+<!-- BACKGROUND (PARTICLES.JS) -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- CAROUSEL (SWIPER) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <!-- menu -->
+<!-- MENU BURGER -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-
-  <script src="./js/main.js"></script>
-  <script src="./js/darkmode.js"></script>
-  <script src="./js/animations.js"></script>
+<!-- OTHER TAILWIND (FLOWBITE) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<!-- ME SCRIPT -->
+<script src="./js/main.js"></script>
+<script src="./js/darkmode.js"></script>
+<script src="./js/animations.js"></script>
 </body>
 </html>

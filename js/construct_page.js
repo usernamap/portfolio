@@ -1,3 +1,4 @@
+// BACKGROUND (particles.js)
 particlesJS(
     "particles-js", {
         "particles":{

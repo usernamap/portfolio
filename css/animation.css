@@ -1,35 +1,82 @@
-/* scale btn nav  */
+/* ALL */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* HEADER */
 .nav--title:hover, .nav--text:hover{
   scale: 1.1;
 }
-
 .nav--toggle:hover{
   scale: 1.3;
 }
 
-/* background */
 
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+
+/* MAIN */
+
+/* SECTION ABOUT */
+  /* modal pour la section "À propos" */
+  .cv-modal-content {  
+    animation-name: zoom;
+    animation-duration: 1s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close-animation {
+    animation-name: dezoom;
+    animation-duration: 1s;
   }
 
+  @keyframes dezoom {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
+  }
+
+/* SECTION SKILLS */
+
+
+/* SECTION PROJECTS */
+/* modal pour la section "projects" */
+  .modal-content {  
+    animation-name: zoom;
+    animation-duration: 1s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close-animation {
+    animation-name: dezoom;
+    animation-duration: 1s;
+  }
+
+  @keyframes dezoom {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
+  }
+
+/* SECTION CONTACT */
 
 
 
-/* section */
 
 
-/* footer */
-
+/* FOOTER */
 .footer--nav:hover{
   scale: 1.2;
 }
-
 .footer-icon--circle:hover {
   transform: rotate(360deg);
   transition: transform 0.5s ease-in-out;
@@ -40,4 +87,7 @@
   transition: transform 0.5s ease-in-out;
   scale: 1.4;
 }
+
+
+
 
