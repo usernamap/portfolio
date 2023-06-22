@@ -45,7 +45,7 @@ body{
   transition: background-color 500ms;
 }
 body .span {
-  color: rgb(44, 82, 129)
+  color: rgb(2, 110, 242)
 }
 body a, body .text-gray-200 {
   color: #cbd5e0;
@@ -77,7 +77,7 @@ body.light {
   background-color: #e2e8f0;
 }
 body.light .span {
-  color: rgb(66, 153, 225)
+  color: rgb(0, 90, 164)
 }
 body.light .close{
   color: black;

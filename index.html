@@ -12,19 +12,31 @@
   <meta name="revisit-after" content="3 month">
   <meta name="language" content="French">
   <meta name="distribution" content="global">
+  <meta name="theme-color" content="#1a202c">
+  <meta property="og:title" content="Portfolio" />
+  <meta property="og:description" content="Portfolio de lucas blanchard" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio.lucas-blanchard.com/" />
+  <meta property="og:image" content="https://portfolio.lucas-blanchard.com/assets/images/manifest-icon/icon-384x384.png" />
+  <meta property="og:site_name" content="Portfolio" />
+  <meta property="og:locale" content="fr_FR" />
   <title>Portfolio</title>
+  <link rel="manifest" href="./manifest.json">
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon.ico">
   <!-- STYLES CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/darkmode.css">
   <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <!-- TAILWIND -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
   <!-- SWIPER -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <!-- FONT AWESOME (ICON) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- WORKER INIT -->
+  <script src="js/worker_init.js"></script>
 </head>
 
 <body class="font-sans text-gray-900">
@@ -33,7 +45,7 @@
 
   <!-- HEADER -->
   <header class="shadow-md dark:bg-gray-800 fixed w-full" x-data="{ open: true }">
-    <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400 absolute right-0 bottom-[-1rem]">
+    <button aria-label="Boutton dark/light mode" @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400 absolute right-0 bottom-[-1rem]">
       <svg x-show="open" viewBox="0 0 200 200" fill="currentColor" class="h-6 w-6 fill-current ">
         <path d="M114,74.5a19.92,19.92,0,0,0-28.5,0L57,103a9.9,9.9,0,0,0,14,14L99.5,88.5,128,117a9.9,9.9,0,0,0,14-14Z"></path><path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Z"></path>
       </svg>
@@ -50,9 +62,9 @@
         x-transition:leave-start="opacity-100 transform scale-100"
         x-transition:leave-end="opacity-0 transform scale-90">
         <div class="flex justify-between items-center">
-            <a href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
+            <a aria-label="Titre de mon portfolio" href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
             <div class="md:hidden" x-data="{ open: false }">
-                <button @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                <button aria-label="Boutton menu burger" @click="open = !open" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
                     <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 fill-current">
                         <path fill-rule="evenodd" d="M4 5a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zm1 7a1 1 0 100 2h14a1 1 0 100-2H5zm1 7a1 1 0 100 2h14a1 1 0 100-2H6z"></path>
                     </svg>
@@ -65,19 +77,19 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="mt-2 space-y-2 bg-gray-800 rounded p-2">
-                    <a href="#about" class="no-select block text-sm text-gray-200 hover:text-gray-300">À propos</a>
-                    <a href="#skills" class="no-select block text-sm text-gray-200 hover:text-gray-300">Compétences</a>
-                    <a href="#projects" class="no-select block text-sm text-gray-200 hover:text-gray-300">Projets</a>
-                    <a href="#contact" class="no-select block text-sm text-gray-200 hover:text-gray-300">Contact</a>
+                    <a aria-label="naviguer vers à propos" href="#about" class="no-select block text-sm text-gray-200 hover:text-gray-300">À propos</a>
+                    <a aria-label="naviguer vers compétences" href="#skills" class="no-select block text-sm text-gray-200 hover:text-gray-300">Compétences</a>
+                    <a aria-label="naviguer vers projets" href="#projects" class="no-select block text-sm text-gray-200 hover:text-gray-300">Projets</a>
+                    <a aria-label="naviguer vers contacter" href="#contact" class="no-select block text-sm text-gray-200 hover:text-gray-300">Contact</a>
                 </div>
             </div>
             <div class="hidden md:flex space-x-1">
-                <a href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
-                <a href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
-                <a href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
-                <a href="#contact" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Contact</a>
+                <a aria-label="naviguer vers à propos" href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
+                <a aria-label="naviguer vers à compétences" href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
+                <a aria-label="naviguer vers projets" href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
+                <a aria-label="naviguer vers contacter" href="#contact" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Contact</a>
             </div>
-            <input id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
+            <input aria-label="toggle dark/light mode" id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
         </div>
     </nav>
 </header>
@@ -91,50 +103,50 @@
 <!-- SECTION ABOUT -->
 <section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
-    <h4 class="text-3xl text-white font-bold mb-3">
+    <p class="text-3xl text-white font-bold mb-3">
       Salut ! Je suis <span class="span">Lucas Blanchard</span>
-    </h4>
+    </p>
     <p class="text-gray-200 mb-8">
       Passionné par l'informatique et les nouvelles technologies, je me suis naturellement orienté vers le développement web. <br> <br> Ma curiosité et ma soif d'apprendre me permettent de me tenir constamment à jour sur les dernières avancées technologiques. <br> <br> Je suis convaincu que chaque problème a sa solution et je suis toujours prêt à relever de nouveaux défis pour transformer les idées en réalités.
     </p>
     <div class="btn-cv">
-      <a href="assets/docs/CV_Lucas-Blanchard.pdf" id="cv" class="cvPreview_btn bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full" download>
+      <a aria-label="télécharger mon cv" href="assets/docs/CV_Lucas-Blanchard.pdf" id="cv" class="cvPreview_btn bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full" download>
         Télécharger mon CV
       </a>
-      <a href="#" id="cvPreview" class="ml-2 z-10 bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
+      <a aria-label="prévisualiser le cv" href="#" id="cvPreview" class="ml-2 z-10 bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full">
         <i class="fas fa-eye"></i>
       </a>
     </div>
   </div>
   <div class="img-index w-full md:w-1/2">
-    <img src="assets/images/base/profile.webp" alt="Photo de profile de Lucas Blanchard" class="profile-img--about rounded-lg mt-6 md:mt-0">
+    <img src="assets/images/base/profile.webp" alt="Photo de profile de Lucas Blanchard" class="profile-img--about rounded-lg mt-6 md:mt-0 lozad">
   </div>
 </section>
 <div class="container-button--cv">
-  <button id="button--cv"></button>
+  <button aria-label="Boutton cv" id="button--cv"></button>
 </div>
 <!-- MODAL ABOUT -->
 <div id="cvModal" class="cv-modal no-select">
   <div class="cv-modal-content" id="cvModalContent">
     <span class="cv-modal-close">&times;</span>
-    <img src="assets/images/base/CV_développeur-WEB.webp"  alt="image du CV" class="img-modal--cv">
+    <img src="assets/images/base/CV_développeur-WEB.webp"  alt="image du CV" class="img-modal--cv lozad">
   </div>
 </div>
 
   <!-- SECTION SKILLS -->
   <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
     <div class="img-index  w-full md:w-1/2">
-            <img src="assets/images/base/reunion_wac.webp" alt="Photo de la réunion de la Web@Académie" class="reunion-img--skills rounded-lg">
-            <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/base/reunion_wac.webp" alt="Photo de la réunion de la Web@Académie" class="reunion-img--skills rounded-lg lozad">
+            <a aria-label="aller sur l'instagram de web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
               <figure>
                 <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
               </figure>
             </a>
     </div>
     <div class="w-full md:w-1/2 pl-10">
-        <h4 class="text-3xl text-white font-bold mb-3">
+        <p class="text-3xl text-white font-bold mb-3">
           Mes compétences clés en développement web
-        </h4>
+        </p>
         <p class="text-gray-200 mb-8">
           Grâce à ma formation à la WebAcademy, j'ai acquis une solide base en développement front-end et back-end. <br> <br> Je maîtrise HTML, CSS et JavaScript, avec une expertise particulière en React et Node.js. <br> <br> J'ai également de l'expérience en matière de bases de données avec MySQL et MongoDB. <br> <br> De plus, je suis à l'aise avec les outils de versionnage tels que Git. J'ai une forte orientation vers le développement mobile avec une compétence en React Native. <br> <br> Enfin, j'accorde une grande importance aux bonnes pratiques de codage, à la performance et à l'accessibilité.
         </p>
@@ -145,9 +157,9 @@
 <section id="projects" class="scrollable-content flex mb-20 section-style no-select overflow-x-hidden">
   <div class="w-full">
     <div class="title-container flex items-center flex-col">
-      <h4 class="title--projects text-3xl text-white font-bold mb-3">
+      <p class="title--projects text-3xl text-white font-bold mb-3">
         Mes projets
-      </h4>
+      </p>
     </div>
   </div>
   <div class="slide-container w-full md:w-1/2 relative left-32 ">
@@ -156,11 +168,11 @@
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-snapchat/snapchat_result.webp" alt="Projet My Snapchat" class="rounded-lg">
+          <img src="assets/images/projects/my-snapchat/snapchat_result.webp" alt="Projet My Snapchat" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
-            <h4 class="project--title text-2xl text-white font-bold mb-3">
+            <p class="project--title text-2xl text-white font-bold mb-3">
               My Snapchat
-            </h4>
+            </p>
             <p class="project--text text-gray-200 mb-8">
               Re-création de l’application snapchat - Mobile <br> <br> React Native + API REST
             </p>
@@ -168,11 +180,11 @@
         </div>
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/free-ads/free-ads_result.webp" alt="Projet Free Ads" class="rounded-lg">
+          <img src="assets/images/projects/free-ads/free-ads_result.webp" alt="Projet Free Ads" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
-            <h4 class="project--title text-2xl text-white font-bold mb-3">
+            <p class="project--title text-2xl text-white font-bold mb-3">
               Free Ads
-            </h4>
+          </p>
             <p class="project--text text-gray-200 mb-8">
               Site de petite annonce - Web <br> <br> Laravel + MySQL
             </p>
@@ -180,11 +192,11 @@
         </div>
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/tweet-academy/tweet_result.webp" alt="Projet Tweet Académie" class="rounded-lg">
+          <img src="assets/images/projects/tweet-academy/tweet_result.webp" alt="Projet Tweet Académie" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
-            <h4 class="project--title text-2xl text-white font-bold mb-3">
+            <p class="project--title text-2xl text-white font-bold mb-3">
               Tweet Académie
-            </h4>
+            </p>
             <p class="project--text text-gray-200 mb-8">
               Recréer un réseau social - Web <br> <br> PHP + MySQL
             </p>
@@ -192,11 +204,11 @@
         </div>
         <!-- Slide 4 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/spotify/spotify_result.webp" alt="Projet Projet My Spotify" class="rounded-lg">
+          <img src="assets/images/projects/spotify/spotify_result.webp" alt="Projet Projet My Spotify" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
-            <h4 class="project--title text-2xl text-white font-bold mb-3">
+            <p class="project--title text-2xl text-white font-bold mb-3">
               My Spotify
-            </h4>
+            </p>
             <p class="project--text text-gray-200 mb-8">
               Création d’un lecteur multimédia online - Web <br> <br> React + API REST + Docker
             </p>
@@ -204,11 +216,11 @@
         </div>
         <!-- Slide 5 -->
         <div class="swiper-slide">
-          <img src="assets/images/projects/my-quizz/my-quizz_result.webp" alt="Projet My Quizz" class="rounded-lg">
+          <img src="assets/images/projects/my-quizz/my-quizz_result.webp" alt="Projet My Quizz" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
-            <h4 class="project--title text-2xl text-white font-bold mb-3">
+            <p class="project--title text-2xl text-white font-bold mb-3">
               My Quizz
-            </h4>
+            </p>
             <p class="project--text text-gray-200 mb-8">
               Développer de quiz en ligne - Web <br> <br> Symfony + MySQL
             </p>
@@ -237,21 +249,21 @@
 <!-- SECTION CONTACT -->
 <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
   <div class="img-index w-full md:w-1/2 no-select">
-      <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1]">
-      <a href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
+      <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1] lozad">
+      <a aria-label="aller sur l'instagram de la web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
         <figure>
           <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
         </figure>
       </a>
   </div>
   <div class="w-full md:w-1/2 pl-10">
-    <h4 class="text-3xl text-white font-bold mb-3 no-select">
+    <p class="text-3xl text-white font-bold mb-3 no-select">
       Envie de discuter d'un projet ou d'une collaboration ?
-    </h4>
+    </p>
     <p class="text-gray-200 mb-8 no-select">
       Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. <br> <br> Que vous ayez une idée à développer ou que vous ayez besoin d'un développeur web pour renforcer votre équipe, n'hésitez pas à me contacter. <br> <br> Je m'efforce de répondre à tous les messages dans les plus brefs délais.
     </p>
-    <a href="mailto:lucas.blanchard2701@gmail.com" class="btn-mail bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full no-select">
+    <a aria-label="envoyer moi un e-mail" href="mailto:lucas.blanchard2701@gmail.com" class="btn-mail bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full no-select">
        Envoyez-moi un mail
     </a>
     <span class="block mt-2 text-sm text-white opacity-60 ml-2"> <span class="no-select"> à </span>lucas.blanchard2701@gmail.com</span>
@@ -264,20 +276,20 @@
   <!-- COPYRIGHT -->
   <div class="container mx-auto px-6 py-4 md:flex md:items-center md:justify-between">
     <div class="mt-8 md:mt-0 md:order-1" id="copyright">
-      <a href="#" data-popover-target="popover-default" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Lucas BLANCHARD. Tous droits réservés.</a>
+      <a aria-label="copyright du site" href="#" data-popover-target="popover-default" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Lucas BLANCHARD. Tous droits réservés.</a>
     </div>
   <!-- NAV -->
     <div class="md:order-2 no-select">
       <nav class="flex justify-center gap-4">
-        <a href="#about" class="footer--nav text-sm text-gray-300 hover:text-gray-100">À propos</a>
-        <a href="#skills" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Compétences</a>
-        <a href="#projects" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Projets</a>
-        <a href="#contact" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Contact</a>
+        <a aria-label="naviguer vers à propos" href="#about" class="footer--nav text-sm text-gray-300 hover:text-gray-100">À propos</a>
+        <a aria-label="naviguer vers compétences" href="#skills" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Compétences</a>
+        <a aria-label="naviguer vers projets" href="#projects" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Projets</a>
+        <a aria-label="naviguer vers contacts" href="#contact" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Contact</a>
       </nav>
     </div>
   <!-- ME -->
     <div class="mt-8 md:mt-0 text-center md:order-0 no-select">
-      <a href="/">
+      <a aria-label="référence lucas blanchard" href="/">
         <h2 class="footer-me--text text-sm text-gray-300 font-medium">Lucas Blanchard</h2>
         <p class="footer-me--text text-xs text-gray-400">2004-2023</p>
       </a>
@@ -285,16 +297,16 @@
 <!-- RESEAUX -->
     <div class="mt-8 md:mt-0 md:order-3">
       <nav class="flex justify-center gap-4">
-        <a href="https://github.com/usernamap" target="_blank">
+        <a aria-label="mon github" href="https://github.com/usernamap" target="_blank">
           <i class="footer-icon--circle fab fa-github fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
-        <a href="https://www.linkedin.com/in/lucas-blanchard-w1/" target="_blank">
+        <a aria-label="mon linkedin" href="https://www.linkedin.com/in/lucas-blanchard-w1/" target="_blank">
           <i class="footer-icon--square fab fa-linkedin fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
-        <a href="https://lucas-blanchard.com" target="_blank">
+        <a aria-label="mon site" href="https://lucas-blanchard.com" target="_blank">
           <i class="footer-icon--circle fas fa-globe fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
-        <a href="mailto:lucas.blanchard2701@gmail.com" target="_blank">
+        <a aria-label="envoyer moi un mail" href="mailto:lucas.blanchard2701@gmail.com" target="_blank">
           <i class="footer-icon--square fas fa-envelope fa-lg text-gray-300 hover:text-gray-100"></i>
         </a>
       </nav>
@@ -313,6 +325,7 @@
 </footer>
 
 <!-- SCRIPTS  JAVASCRIPT -->
+<!-- WORKER -->
 <!-- APPARITION DES ELEMENTS (GSAP) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <!-- APPARITION DES ELEMENTS (SCROLLREVEAL) -->
@@ -325,6 +338,8 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <!-- OTHER TAILWIND (FLOWBITE) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<!-- RECHARGEMENT DES IMAGES (LOZAD) -->
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <!-- ME SCRIPT -->
 <script src="./js/main.js"></script>
 <script src="./js/darkmode.js"></script>

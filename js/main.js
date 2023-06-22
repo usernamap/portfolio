@@ -1,4 +1,8 @@
 // ALL
+// Initialize lozad.js
+const observer = lozad();
+observer.observe();
+
 var span = document.getElementsByClassName("close")[0];
 
 // Close modal when clicking on the close button
