@@ -136,10 +136,7 @@ main{
 #projects {
   display: flex;
   flex-direction: column;
-  padding-top: 11em;
-}
-.title--projects {
-  margin-bottom: 8em;
+  padding-top: 6em;
 }
 .slide-container{
   width: 40%;
@@ -247,8 +244,9 @@ main{
 
 /* SECTION CONTACT */
 #contact{
-  padding-top: 5em;
+  padding-top: 7em;
 }
+
 .group-img--contact{
   width: 70%;
 }

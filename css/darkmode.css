@@ -121,4 +121,13 @@ body.light .footer-icon--circle{
 body.light .footer-icon--square{
   color: #2d3748;
 }
-
+body.light .appearance-none{
+  background-color: #2d3748;
+  color: white;
+}
+body.light .appearance-none:hover{
+  background-color: #3a3e46;
+}
+body.light .appearance-none:focus{
+  background-color: #3a3e46;
+}
