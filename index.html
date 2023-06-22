@@ -36,7 +36,7 @@
   <!-- FONT AWESOME (ICON) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- WORKER INIT -->
-  <script src="js/worker_init.js"></script>
+  <!-- <script src="js/worker_init.js"></script> -->
 </head>
 
 <body class="font-sans text-gray-900">
@@ -249,12 +249,12 @@
 <!-- SECTION CONTACT -->
 <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
   <div class="img-index w-full md:w-1/2 no-select">
-      <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1] lozad">
-      <a aria-label="aller sur l'instagram de la web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
-        <figure>
-          <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
-        </figure>
-      </a>
+    <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1] lozad">
+    <a aria-label="aller sur l'instagram de la web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
+      <figure>
+        <figcaption class="text-gray-400 opacity-50">Instagram : tek.moulins</figcaption>
+      </figure>
+    </a>
   </div>
   <div class="w-full md:w-1/2 pl-10">
     <p class="text-3xl text-white font-bold mb-3 no-select">
@@ -263,11 +263,49 @@
     <p class="text-gray-200 mb-8 no-select">
       Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. <br> <br> Que vous ayez une idée à développer ou que vous ayez besoin d'un développeur web pour renforcer votre équipe, n'hésitez pas à me contacter. <br> <br> Je m'efforce de répondre à tous les messages dans les plus brefs délais.
     </p>
-    <a aria-label="envoyer moi un e-mail" href="mailto:lucas.blanchard2701@gmail.com" class="btn-mail bg-indigo-500 hover:bg-indigo-400 transition duration-300 ease-in-out text-white font-bold py-2 px-4 rounded-full no-select">
-       Envoyez-moi un mail
-    </a>
-    <span class="block mt-2 text-sm text-white opacity-60 ml-2"> <span class="no-select"> à </span>lucas.blanchard2701@gmail.com</span>
   </div>
+  <div class="w-full flex flex-col items-center">
+    <h2 class="text-3xl text-white font-bold mb-5">Contactez moi</h2>
+    <form id="contact-form" class="z-10 w-full max-w-lg">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="user_email">
+          Votre email
+        </label>
+        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" id="user_email" type="email" name="user_email" placeholder="exemple@gmail.com">
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="subject">
+          Sujet
+        </label>
+        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600" id="subject" type="text" name="subject">
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="message">
+          Votre message
+        </label>
+        <textarea class="no-resize appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 h-48 resize-none" id="message" name="message"></textarea>
+      </div>
+    </div>
+    <div class="md:flex md:items-center">
+      <div class="md:w-1/3">
+        <button class="shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+          Envoyer
+        </button>
+      </div>
+      <div id="response-message--form">
+        <div id="form-messages"></div>
+        <div id="loading" style="display: none;">
+          <div class="spinner"></div>
+        </div>   
+      </div>   
+      <div class="md:w-2/3"></div>
+    </div>
+  </form>
 </section>
 </main>
 
@@ -325,7 +363,6 @@
 </footer>
 
 <!-- SCRIPTS  JAVASCRIPT -->
-<!-- WORKER -->
 <!-- APPARITION DES ELEMENTS (GSAP) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <!-- APPARITION DES ELEMENTS (SCROLLREVEAL) -->
@@ -344,5 +381,6 @@
 <script src="./js/main.js"></script>
 <script src="./js/darkmode.js"></script>
 <script src="./js/animations.js"></script>
+<script src="./js/sendmail.js"></script>
 </body>
 </html>
