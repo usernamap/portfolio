@@ -87,6 +87,9 @@ body.light header {
 }
 
 /* SECTION PROJET */
+.slide--project:hover{
+  border: rgb(96, 96, 96) solid 1px;
+}
 body.light .project--title {
   color: #e2e8f0;
 }

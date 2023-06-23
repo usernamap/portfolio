@@ -11,7 +11,7 @@ ScrollReveal().reveal('#contact', { delay: 800 });
 
 // CAROUSEL (SWIPER)
 var swiperInitiated = false;
-window.onscroll = function() {
+document.addEventListener('DOMContentLoaded', function() {
   var projectsSection = document.getElementById('projects');
   var rect = projectsSection.getBoundingClientRect();
   var isInView = (rect.top <= window.innerHeight) && ((rect.top + rect.height) >= 0);
@@ -32,7 +32,7 @@ window.onscroll = function() {
 
     swiperInitiated = true; // Make sure swiper does not get initiated multiple times
   }
-};
+});
 
 // BACKGROUND (PARTICLES.JS)
   function generateParticles(color) {

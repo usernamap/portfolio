@@ -130,6 +130,15 @@ main{
 }
 .slide-container{
   width: 40%;
+  margin-bottom: 5em;
+}
+.slide--project{
+  cursor: pointer;
+}
+.slide--project:hover{
+  border: rgb(179, 179, 179) solid 1px;
+  border-radius: 2%;
+  scale: 1.02;
 }
 /* carrousel project exterieur */
 .swiper-button-prev, .swiper-button-next{

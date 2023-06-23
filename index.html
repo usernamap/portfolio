@@ -163,12 +163,12 @@
       </p>
     </div>
   </div>
-  <div class="slide-container w-full md:w-1/2 relative left-32 ">
+  <div class="slide-container w-full md:w-1/2 relative left-32">
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide slide--project">
           <img src="assets/images/projects/my-snapchat/snapchat_result.webp" alt="Projet My Snapchat" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
@@ -180,7 +180,7 @@
           </div>
         </div>
         <!-- Slide 2 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide slide--project">
           <img src="assets/images/projects/free-ads/free-ads_result.webp" alt="Projet Free Ads" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
@@ -192,7 +192,7 @@
           </div>
         </div>
         <!-- Slide 3 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide slide--project">
           <img src="assets/images/projects/tweet-academy/tweet_result.webp" alt="Projet Tweet Académie" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
@@ -204,7 +204,7 @@
           </div>
         </div>
         <!-- Slide 4 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide slide--project">
           <img src="assets/images/projects/spotify/spotify_result.webp" alt="Projet Projet My Spotify" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
@@ -216,7 +216,7 @@
           </div>
         </div>
         <!-- Slide 5 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide slide--project">
           <img src="assets/images/projects/my-quizz/my-quizz_result.webp" alt="Projet My Quizz" class="rounded-lg lozad">
           <div class="bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
@@ -281,7 +281,7 @@
         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="subject">
           Sujet
         </label>
-        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600 hover:bg-gray-600" id="subject" type="text" name="subject">
+        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600 hover:bg-gray-600" id="subject" type="text" name="subject" placeholder="Votre objet ici....">
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -289,7 +289,7 @@
         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="message">
           Votre message
         </label>
-        <textarea class="no-resize appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 hover:bg-gray-600 h-18 resize-none" id="message" name="message"></textarea>
+        <textarea class="no-resize appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 hover:bg-gray-600 h-18 resize-none" id="message" name="message" placeholder="Votre message ici..."></textarea>
       </div>
     </div>
     <div class="md:flex md:items-center">
@@ -326,15 +326,6 @@
         <a aria-label="naviguer vers contacts" href="#contact" class="footer--nav text-sm text-gray-300 hover:text-gray-100">Contact</a>
       </nav>
     </div>
-  <!-- ME -->
-    <div class="mt-8 md:mt-0 text-center md:order-0 no-select">
-      <a aria-label="référence lucas blanchard" href="/">
-        <h2 class="footer-me--text text-sm text-gray-300 font-medium">Lucas Blanchard</h2>
-        <p class="footer-me--text text-xs text-gray-400">2004-2023</p>
-      </a>
-    </div>
-    <!-- footer-icon--circle -->
-    <!-- footer-icon--square -->
 <!-- RESEAUX -->
     <div class="mt-8 md:mt-0 md:order-3">
       <nav class="flex justify-center gap-4">
@@ -361,7 +352,7 @@
     </div>
   </div>
 <!-- POPOVER COPYRIGHT -->
-  <div data-popover id="popover-default" role="tooltip" class="popover-footer absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity transition-all transform ease-in-out duration-500 scale-95 bg-gray-800 border border-gray-400 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 no-select">
+  <div data-popover id="popover-default" role="tooltip" class="popover-footer absolute z-15 invisible inline-block w-64 text-sm text-gray-500 transition-opacity transition-all transform ease-in-out duration-500 scale-95 bg-gray-800 border border-gray-400 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800 no-select">
     <p class="footer--copyright mt-3 mb-3 text-center text-xs text-gray-400">  
       Les contenus disponibles sur le site <strong>portfolio.lucas-blanchard.com</strong> (images, photos, et plus généralement tout type de données) <br> relèvent des <strong>législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle </strong><br> et sont protégées par le <strong> Code de la Propriété Intellectuelle</strong> en vigueur en France. <br> Tous les droits de reproduction sont <strong>réservés</strong>. <strong> Reproduction interdite. </strong>
     </p>
