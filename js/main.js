@@ -2,9 +2,7 @@
 // Initialize lozad.js
 const observer = lozad();
 observer.observe();
-
 var span = document.getElementsByClassName("close")[0];
-
 // Close modal when clicking on the close button
 span.onclick = function() {
   modalContent.classList.add("close-animation");
@@ -61,7 +59,6 @@ window.addEventListener('keydown', function(event) {
   }
 });
 
-
 // MODAL SECTION ABOUT
 var modal_cv = document.getElementById("cvModal");
 var cvModalContent = document.getElementById("cvModalContent"); // Ajoutez cette ligne
@@ -74,7 +71,6 @@ btn.onclick = function() {
   document.querySelector(".modal").classList.add("open");
   document.body.classList.add("no-scroll");
 }
-
 span.onclick = function() {
   cvModalContent.classList.add("close-animation"); // Modifiez cette ligne
   setTimeout(function() {
@@ -85,28 +81,22 @@ span.onclick = function() {
     document.body.classList.remove("no-scroll");
   }, 1000);
 }
-
 // MODAL SECTION PROJECTS
 var modal = document.getElementById("myModal");
 var slides = document.getElementsByClassName('swiper-slide');
 var modalContent = document.getElementById("modalContent");
-
 // DESCRIPTION ICON
 var description_time = '<span class="tooltiptext"> Temps maximum du projet </span>';
 var description_person = '<span class="tooltiptext"> Personne dans le projet </span>';
-
 var description_difficulty = '<span class="tooltiptext">Difficulté du projet </span>';
 var description_star = '<span class="tooltiptext"> Satisfaction du projet </span>';
-
 // SLIDE 1 ICON
 var icon_time = `<div class="tooltip-container"><img src="assets/images/icon/chronometer.webp" class="icon-project" alt="temps icon" width="15" height="15" margin-right= 1em>${description_time}</div>`;
 var icon_person = `<div class="tooltip-container"><img src="assets/images/icon/user.webp" class="icon-project" alt="personne icon" width="15" height="15">${description_person}</div>`;
-
 // SLIDE 2 ICON
 var easy_difficulty = `<span class="span-difficulty--project"> <div class="tooltip-container"> <img src="assets/images/icon/easy_difficulty.webp" class="icon-project" alt="personne icon" width="30" height="30"> ${description_difficulty}</div></span>`;
 var medium_difficulty = `<span class="span-difficulty--project"> <div class="tooltip-container"> <img src="assets/images/icon/medium_difficulty.webp" class="icon-project" alt="personne icon" width="30" height="30"> ${description_difficulty}</div></span>`;
 var hard_difficulty = `<span class="span-difficulty--project"> <div class="tooltip-container"> <img src="assets/images/icon/hard_difficulty.webp" class="icon-project" alt="personne icon" width="30" height="30">${description_difficulty} </div></span>`;
-
 // SLIDE 3 ICON
 var star_one = `<span class="span-star--project"> <div class="tooltip-container" style="display: flex !important;"> <img src="assets/images/icon/star.webp" alt="icone" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> ${description_star} </div>`;
 var star_two = `<span class="span-star--project"> <div class="tooltip-container" style="display: flex !important;"> <img src="assets/images/icon/star.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> <img src="assets/images/icon/star_empty.webp" class="icon-project" alt="personne icon" width="15" height="15"> ${description_star} </div>`;
@@ -141,16 +131,13 @@ var projects = [
     descriptions: [`Un projet équipé du framework Symfony, ce projet offre des catégories de quiz 	à choix, un suivi des performances des utilisateurs, et des capacités d'administration avancées <br> <span class="span-time_person--project" style='left: 0; margin-left: 1em;'> ${icon_time} 2 semaine </span><br><span class="span-time_person--project" style='right: 0; margin-right: 1em;'>${icon_person}<p style='color: steelblue'> 2 </p><br></span> `, `<p class='description-technique--project'>Basé sur le framework PHP Symfony utilsant plusieurs composants clés de Symfony, notamment : Les Repositories Doctrine, Entities, Relations de models, Form Builder et Twig. Il est conçu pour proposer des quiz pour tester la culture générale de ses utilisateurs. Le système devrait également collecter des informations sur les utilisateurs pour personnaliser leurs expériences.</p>${easy_difficulty}`, `<p class='description-technique--project'>Symfony permet d'aborder diverses facettes du développement web moderne. Avec Symfony, je peux utiliser des principes de programmation orientée objet, ce qui est une compétence précieuse pour tout développeur web. De plus, j'apprécie le fait que Symfony est basé sur le modèle MVC (Modèle-Vue-Contrôleur), qui aide à structurer et organiser le code.</p>${star_two}`]
   }
 ];
-
 // RECUPERER LES SLIDES
 for (let i = 0; i < slides.length; i++) {
   slides[i].onclick = function() {
     modal.style.display = "block";
     document.body.classList.add("no-scroll");
-
     // Récupérez le projet correspondant à l'image cliquée
     var project = projects[i];
-
     // Générez le contenu du carrousel
     var carouselContent = "";
     for (var j = 0; j < project.images.length; j++) {
@@ -164,7 +151,6 @@ for (let i = 0; i < slides.length; i++) {
       </div>
     </div>`;
     }
-
     // AJOUTER CARROUSEL
     modalContent.innerHTML = `
       <div class="swiper-container modalSwiper">
@@ -175,7 +161,6 @@ for (let i = 0; i < slides.length; i++) {
         <div class="swiper-button-next project-in"></div>
         <div class="swiper-button-prev project-in"></div>
       </div>`;
-
     // INITIALISER CARROUSEL
     var modalSwiper = new Swiper('.modalSwiper', {
       navigation: {
@@ -189,9 +174,3 @@ for (let i = 0; i < slides.length; i++) {
     });
   }
 }
-
-
-
-
-
-

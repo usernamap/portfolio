@@ -1,32 +1,26 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) {
   event.preventDefault();
-
   let email = document.getElementById('user_email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
-
   // Vérifier si l'adresse e-mail est bien formée
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     document.getElementById('form-messages').innerHTML = `<p style="color: red; margin-left: 2em">L'adresse e-mail n'est pas valide.</p>`;
     return;
   }
-
   // Vérifier que les champs obligatoires sont remplis
   if (!email || !subject || !message) {
     document.getElementById('form-messages').innerHTML = `<p style="color: red; margin-left: 2em">Tous les champs sont obligatoires.</p>`;
     return;
   }
-
   let mail = {
     email: email,
     subject: subject,
     message: message
   }
-
   // Afficher l'indicateur de chargement
   document.getElementById('loading').style.display = 'block';
-
   fetch('https://mailer.lucas-blanchard.com/sendmail', {
     method: 'POST',
     headers: {

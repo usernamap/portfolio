@@ -1,35 +1,20 @@
 /* TRÈS IMPORTANT */
-
 /* Appareils extra petits (téléphones, 600px et moins) */
-@media only screen and (max-width: 600px) {
-    
+@media only screen and (max-width: 600px) {   
 }
-
-
-
 /* IMPORTANT */
 /* Petits appareils (tablettes portrait et grands téléphones, 600 pixels et plus) */
 @media only screen and (min-width: 600px) {
 
 }
 
-
-
-
-
-
-
 /* PAS IMPORTANT */
-
 /* Appareils moyens (tablettes paysage, 768 pixels et plus)*/
 @media only screen and (min-width: 768px) {
-
 }
 /* Appareils volumineux (ordinateurs portables/de bureau, 992 px et plus) */
 @media only screen and (min-width: 992px) {
-
 }
 /* Appareils extra larges (grands ordinateurs portables et ordinateurs de bureau, 1200 pixels et plus) */
 @media only screen and (min-width: 1200px) {
-
 }

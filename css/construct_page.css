@@ -26,9 +26,6 @@ h1{
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-
-
-
 /* BACKGROUND */
   /* ---- particles.js container ---- */ 
   #particles-js{ 
@@ -40,4 +37,3 @@ h1{
     background-size: 20%; 
     background-position: 50% 50%; 
 }
-

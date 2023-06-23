@@ -1,7 +1,7 @@
 // APPARITION DES ELEMENTS (GSAP)
 gsap.from("header", {duration: 0.5, y: -300, opacity: 0, scale: 0.5});
 // gsap.from("main", {duration: 1.5, y: -300, opacity: 0, scale: 0.5});
-gsap.from("footer", {duration: 3, y: -300, opacity: 0, scale: 0.5});
+gsap.from("footer", {duration: 0.8, y: -300, opacity: 0, scale: 0.5});
 
 // APPARITION DES ELEMENTS (SCROLLREVEAL)
 ScrollReveal().reveal('#about', { delay: 200 });
@@ -15,7 +15,6 @@ window.onscroll = function() {
   var projectsSection = document.getElementById('projects');
   var rect = projectsSection.getBoundingClientRect();
   var isInView = (rect.top <= window.innerHeight) && ((rect.top + rect.height) >= 0);
-
   // Initialize Swiper when the #projects section is in view and swiper has not been initiated yet
   if (isInView && !swiperInitiated) {
     var swiper = new Swiper('.swiper-container', {
@@ -149,10 +148,8 @@ window.onscroll = function() {
     }
     );
 }
-
 if (window.pJSDom && window.pJSDom.length > 0 && window.pJSDom[0].pJS.particles) {
   window.pJSDom[0].pJS.particles.array.splice(0, window.pJSDom[0].pJS.particles.array.length);
 }
-
 generateParticles(toggle.checked ? '#000000' : '#ffffff');
 

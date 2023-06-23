@@ -16,12 +16,9 @@
   overflow-y: scroll;
   overflow-x: scroll;
   scroll-behavior: smooth;
-
   /* enlever la bar de scroll */
   scrollbar-width: none; /* Firefox */
-
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-
   &::-webkit-scrollbar {
       width: 0px;
       background: transparent; /* Chrome/Safari/Webkit */
@@ -36,14 +33,12 @@
   font-weight: bold;
   transition: 0.3s;
 }
-
 .close:hover,
 .close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
-
 
 /* HEADER */
 header{
@@ -52,7 +47,6 @@ header{
     z-index: 11;
     transition: all 0.5s ease;
 }
-
 
 /* MAIN */
 main{
@@ -64,11 +58,9 @@ main{
 .img-index {
   z-index: 0 !important;
 }
-
 #about, #skills, #contact{
   padding-left: 7em;
 }
-
 
 /* SECTION ABOUT */
 #about{
@@ -81,6 +73,9 @@ main{
 #cvPreview{
   position: sticky !important;
   z-index: 2;
+}
+.eye-icon--about{
+  display: inherit !important;
 }
 .profile-img--about{
   width: 70%;
@@ -101,27 +96,23 @@ main{
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
 }
-
 .cv-modal-content {
   margin: auto;
   width: 55%;
   height: 95%;
 }
-
 .cv-modal-close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
 .cv-modal-close:hover,
 .cv-modal-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-
 
 /* SECTION SKILLS */
 #skills {
@@ -130,7 +121,6 @@ main{
 .reunion-img--skills{
   width: 70%;
 }
-
 
 /* SECTION PROJECTS */
 #projects {
@@ -145,12 +135,10 @@ main{
 .swiper-button-prev, .swiper-button-next{
   display: none !important;
 }
-
 /* les deux carroussel */
 .swiper-button-next, .swiper-button-prev {
      z-index: 1 !important;
 }
-
 /* modal pour la section "projects" */
 .modal {
   display: none;
@@ -229,7 +217,6 @@ main{
   color: #fff;
   border-radius: 6px;
   padding: 5px 0;
-
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -241,12 +228,10 @@ main{
   visibility: visible;
 }
 
-
 /* SECTION CONTACT */
 #contact{
   padding-top: 7em;
 }
-
 .group-img--contact{
   width: 70%;
 }
@@ -254,24 +239,20 @@ main{
   position: relative !important;
   z-index: 0 !important;
 }
-
 #form-messages{
   width: 18em;
 }
-
 #loading {
   margin-left: 1em;
   margin-right: 2em;
   width: 1em;
   color: rgb(225, 245, 0);
 }
-
 #response-message--form{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row-reverse;
 }
-
 .spinner {
   border: 8px solid #f3f3f3; /* Light grey */
   border-top: 8px solid #3498db; /* Blue */
@@ -280,24 +261,17 @@ main{
   height: 30px;
   animation: spin 2s linear infinite;
 }
-
 .loading-text {
   margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
 }
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-
 /* FOOTER */
 #copyright{
   cursor: pointer;
 }
-
-
-
-
