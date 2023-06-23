@@ -27,7 +27,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
   // Afficher l'indicateur de chargement
   document.getElementById('loading').style.display = 'block';
 
-  fetch('http://51.210.103.134:80/sendmail', {
+  fetch('http://51.210.103.134:8080/sendmail', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
