@@ -10,11 +10,186 @@
 
 /* PAS IMPORTANT */
 /* Appareils moyens (tablettes paysage, 768 pixels et plus)*/
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  /* HEADER */
+    #toggleDarkModeDesktop {
+      display: none;
+    }
+  .nav--title2 {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* SECTION ABOUT */
+#about {
+  padding-top: 0em;
 }
+#about, #skills, #contact {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.title-main{
+  display: none;
+}
+.first-text--about{
+  text-align: center;
+}
+.span{
+  display: none;
+}
+.me-text--about{
+  display: block;
+  text-align: center;
+  color: rgb(2, 110, 242);
+  margin-bottom: 1.5em;
+}
+.presentation--about{
+  text-align: center;
+}
+.btn-cv{
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+.img-about{
+  display: flex;
+    justify-content: center;
+}
+.profile-img--about {
+  width: 100%;
+}
+.cv-modal-content {
+  width: 100%;
+  height: 0%;
+}
+.cv-modal-close{
+  font-size: 49px;
+}
+
+/* SECTION SKILLS */
+#skills {
+  padding-top: 3em;
+}
+.reunion-img--skills {
+  width: 100%;
+  margin-top: 2em;
+}
+.img-skills {
+  margin-bottom: 2em;
+  order: 1;
+}
+.div-text-skills{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding-left: 0em;
+}
+.title-text-skills{
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* SECTION PROJECTS */
+.title--projects {
+  display: none;
+}
+.title--projects--mobile {
+  display: block;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.slide-container {
+  width:  90%;
+  left: 0rem;
+}
+.div-slide--project{
+height: 12em;
+}
+
+/*  SECTION CONTACT */
+.div-text--contact{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 3em;
+  padding-left: 0em;
+}
+.title-text--contact{
+  margin-bottom: 2em;
+  text-align: center;
+}
+.description-text--contact{
+  text-align: center;
+}
+.img-contact{
+  order: 1;
+}
+.group-img--contact{
+  margin-top: 5em;
+  width: 100%;
+}
+
+.div-button--contact{
+  text-align: center;
+}
+
+/* FOOTER */
+.container--footer{
+  display: flex;
+  flex-direction: column-reverse;
+}
+#copyright{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.icon-reseaux-footer{
+  margin-bottom: 2rem;
+}
+.nav-icon-reseaux--footer{
+  gap: 4rem;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Appareils volumineux (ordinateurs portables/de bureau, 992 px et plus) */
 @media only screen and (min-width: 992px) {
+
 }
 /* Appareils extra larges (grands ordinateurs portables et ordinateurs de bureau, 1200 pixels et plus) */
 @media only screen and (min-width: 1200px) {
 }
+
+.nav-about{
+  border-top: rgb(173, 173, 173) solid 4px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.nav-skill{
+  border-top: rgb(173, 173, 173) solid 4px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.nav-project{
+  border-top: rgb(173, 173, 173) solid 4px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.nav-contact{
+  border-top: rgb(173, 173, 173) solid 4px;
+  border-bottom: rgb(173, 173, 173) solid 4px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;  
+  margin-bottom: 2em;
+} 
+
+/* nav-about

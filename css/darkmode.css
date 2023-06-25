@@ -59,6 +59,7 @@ body header {
   background-color: #1a202c;
 }
 
+
 /* LIGHT MODE */
 /* ALL */
 body.light a, body.light .text-gray-200 {
@@ -77,6 +78,9 @@ body.light {
 body.light .span {
   color: rgb(0, 90, 164)
 }
+.me-text--about{
+  color: rgb(0, 90, 164)
+}
 body.light .close{
   color: black;
 }
@@ -85,6 +89,20 @@ body.light .close{
 body.light header {
   background-color: #f7fafc;
 }
+
+body.light .nav-about{
+  border-top: #2d3748 solid 4px;
+ }
+ body.light .nav-skill{
+   border-top: #2d3748 solid 4px;
+ }
+ body.light .nav-project{
+   border-top: #2d3748 solid 4px;
+ }
+ body.light .nav-contact{
+   border-top: #2d3748 solid 4px;
+   border-bottom: #2d3748 solid 4px;
+ } 
 
 /* SECTION PROJET */
 .slide--project:hover{
@@ -131,4 +149,7 @@ body.light .appearance-none:hover{
 }
 body.light .appearance-none:focus{
   background-color: #3a3e46;
+}
+body.light .mobile-menu{
+  background-color: #f7fafc;
 }

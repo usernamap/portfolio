@@ -148,8 +148,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     );
 }
-if (window.pJSDom && window.pJSDom.length > 0 && window.pJSDom[0].pJS.particles) {
-  window.pJSDom[0].pJS.particles.array.splice(0, window.pJSDom[0].pJS.particles.array.length);
-}
-generateParticles(toggle.checked ? '#000000' : '#ffffff');
+
 

@@ -28,6 +28,7 @@
   <!-- tailwind -->
   <link rel="stylesheet" href="css/tailwind.css">
   <!-- main -->
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/darkmode.css">
   <link rel="stylesheet" href="css/animation.css">
@@ -45,19 +46,28 @@
 <!-- HEADER -->
 <header class="shadow-md dark:bg-gray-800 fixed w-full">
   <!-- NAV -->
-  <nav class="container mx-auto px-6 py-3">
-    <div class="flex justify-between items-center">
-      <a aria-label="Titre de mon portfolio" href="/" class="nav--title text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
-      
-      <div class="md:hidden">
+  <nav class="container mx-auto px-6 py-3" id="nav">
+    <div class="flex justify-between bg-gray-300" id="nav-container">
+      <div id="mobile-header" class="md:hidden flex justify-between items-center w-full my-2">
+        <a id="nav-title" aria-label="Titre de mon portfolio" href="/" class="nav--title text-white text-2xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
+
+        <input aria-label="toggle dark/light mode" id="toggleDarkMode" class="nav--toggle toggle " type="checkbox">
+
+        <div id="menu-icon" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                  
         <button aria-label="Boutton menu burger" id="burger" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 fill-current">
+          <svg id="menu-burger" viewBox="0 0 24 24" fill="currentColor" class="fill-current" style="width: 2rem;">
             <path fill-rule="evenodd" d="M4 5a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zm1 7a1 1 0 100 2h14a1 1 0 100-2H5zm1 7a1 1 0 100 2h14a1 1 0 100-2H6z"></path>
           </svg>
+          <svg id="menu-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="hidden">
+            <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </button>
+        </div>
       </div>
-      
-      <div class="hidden md:flex space-x-1" id="desktop-menu">
+      <a id="nav-title" aria-label="Titre de mon portfolio" href="/" class="nav--title2 text-white text-xl font-bold md:text-2xl hover:text-gray-300 no-select">Mon Portfolio</a>
+
+        <div class="hidden md:flex space-x-1" id="desktop-menu">
         <a aria-label="naviguer vers à propos" href="#about" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">À propos</a>
         <a aria-label="naviguer vers à compétences" href="#skills" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Compétences</a>
         <a aria-label="naviguer vers projets" href="#projects" class="nav--text px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-300 transition duration-200 ease-in-out no-select">Projets</a>
@@ -65,40 +75,34 @@
       </div>
       
       <div class="hidden" id="mobile-menu">
-        <div class="mt-2 space-y-2 bg-gray-800 rounded p-2">
-          <a aria-label="naviguer vers à propos" href="#about" class="nav--text block text-sm text-gray-200 hover:text-gray-300 no-select">À propos</a>
-          <a aria-label="naviguer vers à compétences" href="#skills" class="nav--text block text-sm text-gray-200 hover:text-gray-300 no-select">Compétences</a>
-          <a aria-label="naviguer vers projets" href="#projects" class="nav--text block text-sm text-gray-200 hover:text-gray-300 no-select">Projets</a>
-          <a aria-label="naviguer vers contacter" href="#contact" class="nav--text block text-sm text-gray-200 hover:text-gray-300 no-select">Contact</a>
+        <div class="mobile-menu mt-2 space-y-2 bg-gray-800 rounded">
+          <a aria-label="naviguer vers à propos" href="#about" class="nav-about nav--text block text-sm text-gray-200 hover:text-gray-300 no-select" style="font-size: 1.5em; padding-left: 0.5em;">À propos</a>
+          <a aria-label="naviguer vers à compétences" href="#skills" class="nav-skill nav--text block text-sm text-gray-200 hover:text-gray-300 no-select" style="font-size: 1.5em; padding-left: 0.5em;">Compétences</a>
+          <a aria-label="naviguer vers projets" href="#projects" class="nav-project nav--text block text-sm text-gray-200 hover:text-gray-300 no-select" style="font-size: 1.5em; padding-left: 0.5em;">Projets</a>
+          <a aria-label="naviguer vers contacter" href="#contact" class="nav-contact nav--text block text-sm text-gray-200 hover:text-gray-300 no-select" style="font-size: 1.5em; padding-left: 0.5em;">Contact</a>
         </div>
       </div>
 
-      <input aria-label="toggle dark/light mode" id="toggleDarkMode" class="nav--toggle toggle" type="checkbox">
+      <input aria-label="toggle dark/light mode" id="toggleDarkModeDesktop" class="desktop-toggle--darkmode nav--toggle toggle" type="checkbox">
     </div>
   </nav>
 </header>
 
-<script>
-  document.getElementById('burger').addEventListener('click', function() {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
-</script>
-
-
 
 <!-- MAIN -->
 <main class="mx-auto py-10 mt-20"> 
-  <h2 class="text-4xl font-bold text-center text-white mb-8 no-select">
+  <h2 class="title-main text-4xl font-bold text-center text-white mb-8 no-select">
     Bienvenue sur mon Portfolio
   </h2>
   
 <!-- SECTION ABOUT -->
 <section id="about" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
   <div class="w-full md:w-1/2">
-    <p class="text-3xl text-white font-bold mb-3">
+    <p class="first-text--about text-3xl text-white font-bold mb-3">
       Salut ! Je suis <span class="span">Lucas Blanchard</span>
+      <p class="me-text--about text-3xl font-bold mb-3 hidden">Lucas Blanchard</p>
     </p>
-    <p class="text-gray-200 mb-8">
+    <p class="presentation--about text-gray-200 mb-8">
       Passionné par l'informatique et les nouvelles technologies, je me suis naturellement orienté vers le développement web. <br> <br> Ma curiosité et ma soif d'apprendre me permettent de me tenir constamment à jour sur les dernières avancées technologiques. <br> <br> Je suis convaincu que chaque problème a sa solution et je suis toujours prêt à relever de nouveaux défis pour transformer les idées en réalités.
     </p>
     <div class="btn-cv">
@@ -112,7 +116,7 @@
       </a>
     </div>
   </div>
-  <div class="img-index w-full md:w-1/2">
+  <div class="img-about img-index w-full md:w-1/2">
     <img src="assets/images/base/profile.webp" alt="Photo de profile de Lucas Blanchard" class="profile-img--about rounded-lg mt-6 md:mt-0 lozad">
   </div>
 </section>
@@ -129,7 +133,7 @@
 
   <!-- SECTION SKILLS -->
   <section id="skills" class="scrollable-div flex items-center flex-wrap mb-20 section-style no-select">
-    <div class="img-index  w-full md:w-1/2">
+    <div class="img-skills img-index  w-full md:w-1/2">
             <img src="assets/images/base/reunion_wac.webp" alt="Photo de la réunion de la Web@Académie" class="reunion-img--skills rounded-lg lozad">
             <a aria-label="aller sur l'instagram de web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
               <figure>
@@ -137,11 +141,11 @@
               </figure>
             </a>
     </div>
-    <div class="w-full md:w-1/2 pl-10">
-        <p class="text-3xl text-white font-bold mb-3">
+    <div class="div-text-skills w-full md:w-1/2 pl-10">
+        <p class="title-text-skills text-3xl text-white font-bold mb-3">
           Mes compétences clés en développement web
         </p>
-        <p class="text-gray-200 mb-8">
+        <p class="description-text-skills text-gray-200 mb-8">
           Grâce à ma formation à la WebAcademy, j'ai acquis une solide base en développement front-end et back-end. <br> <br> Je maîtrise HTML, CSS et JavaScript, avec une expertise particulière en React et Node.js. <br> <br> J'ai également de l'expérience en matière de bases de données avec MySQL et MongoDB. <br> <br> De plus, je suis à l'aise avec les outils de versionnage tels que Git. J'ai une forte orientation vers le développement mobile avec une compétence en React Native. <br> <br> Enfin, j'accorde une grande importance aux bonnes pratiques de codage, à la performance et à l'accessibilité.
         </p>
     </div>
@@ -149,6 +153,9 @@
 
 <!-- SECTIONS PROJECTS -->
 <section id="projects" class="scrollable-content flex mb-20 section-style no-select overflow-x-hidden">
+  <p class="title--projects--mobile text-4xl text-white font-bold hidden">
+    Mes projets
+  </p>
   <div class="w-full">
     <div class="title-container flex items-center flex-col">
       <p class="title--projects text-4xl text-white font-bold mb-28 ml-28">
@@ -163,7 +170,7 @@
         <!-- Slide 1 -->
         <div class="swiper-slide slide--project">
           <img src="assets/images/projects/my-snapchat/snapchat_result.webp" alt="Projet My Snapchat" class="rounded-lg lozad">
-          <div class="bg-gray-800 rounded-lg p-4">
+          <div class="div-slide--project bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
               My Snapchat
             </p>
@@ -175,7 +182,7 @@
         <!-- Slide 2 -->
         <div class="swiper-slide slide--project">
           <img src="assets/images/projects/free-ads/free-ads_result.webp" alt="Projet Free Ads" class="rounded-lg lozad">
-          <div class="bg-gray-800 rounded-lg p-4">
+          <div class="div-slide--project bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
               Free Ads
           </p>
@@ -187,7 +194,7 @@
         <!-- Slide 3 -->
         <div class="swiper-slide slide--project">
           <img src="assets/images/projects/tweet-academy/tweet_result.webp" alt="Projet Tweet Académie" class="rounded-lg lozad">
-          <div class="bg-gray-800 rounded-lg p-4">
+          <div class="div-slide--project bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
               Tweet Académie
             </p>
@@ -199,7 +206,7 @@
         <!-- Slide 4 -->
         <div class="swiper-slide slide--project">
           <img src="assets/images/projects/spotify/spotify_result.webp" alt="Projet Projet My Spotify" class="rounded-lg lozad">
-          <div class="bg-gray-800 rounded-lg p-4">
+          <div class="div-slide--project bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
               My Spotify
             </p>
@@ -211,7 +218,7 @@
         <!-- Slide 5 -->
         <div class="swiper-slide slide--project">
           <img src="assets/images/projects/my-quizz/my-quizz_result.webp" alt="Projet My Quizz" class="rounded-lg lozad">
-          <div class="bg-gray-800 rounded-lg p-4">
+          <div class="div-slide--project bg-gray-800 rounded-lg p-4">
             <p class="project--title text-2xl text-white font-bold mb-3">
               My Quizz
             </p>
@@ -242,7 +249,7 @@
 
 <!-- SECTION CONTACT -->
 <section id="contact" class="scrollable-div flex items-center flex-wrap mb-20 section-style">
-  <div class="img-index w-full md:w-1/2 no-select">
+  <div class="img-contact img-index w-full md:w-1/2 no-select">
     <img src="assets/images/base/group_wac.webp" alt="Contact Lucas Blanchard" class="group-img--contact rounded-lg  mt-6 md:mt-0 z-[-1] lozad">
     <a aria-label="aller sur l'instagram de la web@cademy" href="https://www.instagram.com/tek.moulins/" target="_blank" rel="noopener noreferrer">
       <figure>
@@ -250,11 +257,11 @@
       </figure>
     </a>
   </div>
-  <div class="w-full md:w-1/2 pl-10">
-    <p class="text-3xl text-white font-bold mb-3 no-select">
+  <div class="div-text--contact w-full md:w-1/2 pl-10">
+    <p class="title-text--contact text-3xl text-white font-bold mb-3 no-select">
       Envie de discuter d'un projet ou d'une collaboration ?
     </p>
-    <p class="text-gray-200 mb-8 no-select">
+    <p class="description-text--contact text-gray-200 mb-8 no-select">
       Je suis toujours ouvert aux nouvelles opportunités et aux projets passionnants. <br> <br> Que vous ayez une idée à développer ou que vous ayez besoin d'un développeur web pour renforcer votre équipe, n'hésitez pas à me contacter. <br> <br> Je m'efforce de répondre à tous les messages dans les plus brefs délais.
     </p>
   </div>
@@ -286,7 +293,7 @@
       </div>
     </div>
     <div class="md:flex md:items-center">
-      <div class="md:w-1/3">
+      <div class="div-button--contact md:w-1/3">
         <button class="shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none hover:bg-gray-600 text-white font-bold py-2 px-4 rounded" type="submit">
           Envoyer
         </button>
@@ -306,7 +313,7 @@
 <!-- FOOTER -->
 <footer class="text-gray-600 body-font bg-gray-800 text-white">
   <!-- COPYRIGHT -->
-  <div class="container mx-auto px-6 py-4 md:flex md:items-center md:justify-between">
+  <div class="container--footer container mx-auto px-6 py-4 md:flex md:items-center md:justify-between">
     <div class="mt-8 md:mt-0 md:order-1" id="copyright">
       <a aria-label="copyright du site" href="#" data-popover-target="popover-default" class="footer--copyright text-center text-xs text-gray-400 no-select">&copy; 2023 Lucas BLANCHARD. Tous droits réservés.</a>
     </div>
@@ -320,8 +327,8 @@
       </nav>
     </div>
 <!-- RESEAUX -->
-    <div class="mt-8 md:mt-0 md:order-3">
-      <nav class="flex justify-center gap-4">
+    <div class="icon-reseaux-footer mt-8 md:mt-0 md:order-3">
+      <nav class="nav-icon-reseaux--footer flex justify-center gap-4">
         <a aria-label="mon github" href="https://github.com/usernamap" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1.5em" viewBox="0 0 496 512" class="footer-icon--circle">
             <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
@@ -371,8 +378,9 @@
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <!-- ME SCRIPT -->
 <script src="./js/main.js"></script>
-<script src="./js/darkmode.js"></script>
 <script src="./js/animations.js"></script>
+<script src="./js/darkmode.js"></script>
 <script src="./js/sendmail.js"></script>
+<script src="./js/responsive.js"></script>
 </body>
 </html>
