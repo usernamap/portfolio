@@ -104,6 +104,18 @@
 .div-slide--project{
 height: 12em;
 }
+#myModal{
+  margin-top: 4em;
+}
+.modal-content{
+  width: 100%;
+}
+.div-slide--projectin{
+  height: 12.5em !important;
+}
+.span-time_person--project{
+  bottom: 0em;
+}
 
 /*  SECTION CONTACT */
 .div-text--contact{

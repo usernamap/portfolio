@@ -144,7 +144,7 @@ for (let i = 0; i < slides.length; i++) {
       carouselContent += `
       <div class="swiper-slide">
       <img src="${project.images[j]}" class="rounded-lg shadow-2xl img-fit" alt="Projet" >
-      <div class="bg-gray-800 rounded-lg p-4" style="height: 8.5em; color: brown">
+      <div class="div-slide--projectin bg-gray-800 rounded-lg p-4" style="height: 8.5em; color: brown">
         <p class="project--text text-gray-200 mb-8">
           ${project.descriptions[j]}
         </p>
