@@ -45,4 +45,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Cacher l'indicateur de chargement
     document.getElementById('loading').style.display = 'none';
   });
+
+    // Réinitialiser les valeurs des champs
+    document.getElementById('user_email').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
 });
