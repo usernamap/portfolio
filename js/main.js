@@ -136,6 +136,7 @@ var projects = [
     descriptions: [`Un projet équipé du framework Symfony, ce projet offre des catégories de quiz 	à choix, un suivi des performances des utilisateurs, et des capacités d'administration avancées <br> <span class="span-time_person--project" style='left: 0; margin-left: 1em;'> ${icon_time} 2 semaine </span><br><span class="span-time_person--project" style='right: 0; margin-right: 1em;'>${icon_person}<p style='color: steelblue'> 2 </p><br></span> `, `<p class='description-technique--project'>Basé sur le framework PHP Symfony utilsant plusieurs composants clés de Symfony, notamment : Les Repositories Doctrine, Entities, Relations de models, Form Builder et Twig. Il est conçu pour proposer des quiz pour tester la culture générale de ses utilisateurs. Le système devrait également collecter des informations sur les utilisateurs pour personnaliser leurs expériences.</p>${easy_difficulty}`, `<p class='description-technique--project'>Symfony permet d'aborder diverses facettes du développement web moderne. Avec Symfony, je peux utiliser des principes de programmation orientée objet, ce qui est une compétence précieuse pour tout développeur web. De plus, j'apprécie le fait que Symfony est basé sur le modèle MVC (Modèle-Vue-Contrôleur), qui aide à structurer et organiser le code.</p>${star_two}`]
   }
 ];
+
 // RECUPERER LES SLIDES
 for (let i = 0; i < slides.length; i++) {
   slides[i].onclick = function() {
