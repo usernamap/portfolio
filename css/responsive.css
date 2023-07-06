@@ -175,6 +175,9 @@ height: 12em;
 
 /* Appareils volumineux (ordinateurs portables/de bureau, 992 px et plus) */
 @media only screen and (min-width: 992px) {
+  .first-img--project{
+    height: 22em;
+  }
 
 }
 /* Appareils extra larges (grands ordinateurs portables et ordinateurs de bureau, 1200 pixels et plus) */

@@ -117,19 +117,88 @@ main{
 /* SECTION SKILLS */
 #skills {
   padding-top: 11em;
+  padding-right: 7em;
+  margin-bottom: 15em;
 }
-.reunion-img--skills{
-  width: 70%;
+.container-bubble {
+	width: 100%;
+	height: 100%;
+	display: flex;
+  justify-content: space-between;
 }
+@keyframes floatLeft {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes floatRight {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.bubbleLeft {
+	width: 150px;
+	height: 150px;
+	box-sizing: border-box;
+	border: 5px white solid;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: floatLeft 6s ease-in-out infinite;
+	img { width: 100%; height: auto; };
+}
+
+.bubbleRight {
+	width: 150px;
+	height: 150px;
+	box-sizing: border-box;
+	border: 5px white solid;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: floatRight 6s ease-in-out infinite;
+	img { width: 100%; height: auto; };
+  margin-right: 1em;
+}
+
+.text-bubble-php--skills{
+margin-right: 0.8em;
+}
+.text-bubble-javascript--skills{
+  margin-right: 0.8em;
+  }
+  .text-bubble-symfony--skills{
+    margin-right: 0.8em;
+    }
+
 
 /* SECTION PROJECTS */
 #projects {
   display: flex;
   flex-direction: column;
   padding-top: 6em;
-}
-.first-img--project{
-  height: 19em;
 }
 .slide-container{
   width: 40%;
