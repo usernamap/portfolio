@@ -128,6 +128,10 @@ main{
   flex-direction: column;
   padding-top: 6em;
 }
+
+.first-img--project{
+  height: 19em;
+}
 .slide-container{
   width: 40%;
   margin-bottom: 5em;
