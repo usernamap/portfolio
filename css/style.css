@@ -200,6 +200,9 @@ margin-right: 0.8em;
   flex-direction: column;
   padding-top: 6em;
 }
+.first-img--project{
+  width: 100%;
+}
 .slide-container{
   width: 40%;
   margin-bottom: 5em;
