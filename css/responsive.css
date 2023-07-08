@@ -1,14 +1,38 @@
 /* TRÈS IMPORTANT */
 /* Appareils extra petits (téléphones, 600px et moins) */
 @media only screen and (max-width: 600px) {   
+  .bubbleLeft,
+.bubbleRight {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: floatLeft 6s ease-in-out infinite;
+  margin: 2.5em;
+}
 }
 /* IMPORTANT */
 /* Petits appareils (tablettes portrait et grands téléphones, 600 pixels et plus) */
-@media only screen and (min-width: 600px) {
-
+@media only screen and (max-width: 900px) {
+  .bubbleLeft,
+.bubbleRight {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: floatLeft 6s ease-in-out infinite;
+  margin: 2.5em;
+}
 }
 
-/* PAS IMPORTANT */
 /* Appareils moyens (tablettes paysage, 768 pixels et plus)*/
 @media only screen and (max-width: 768px) {
   /* HEADER */
@@ -70,22 +94,18 @@
 #skills {
   padding-top: 3em;
 }
-.reunion-img--skills {
-  width: 100%;
-  margin-top: 2em;
-}
-.img-skills {
-  margin-bottom: 2em;
-  order: 1;
-}
-.div-text-skills{
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding-left: 0em;
-}
-.title-text-skills{
-  margin-bottom: 1em;
-  text-align: center;
+.bubbleLeft,
+.bubbleRight {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: floatLeft 6s ease-in-out infinite;
+  margin: 2.5em;
 }
 
 /* SECTION PROJECTS */
@@ -177,6 +197,34 @@ height: 12em;
 @media only screen and (min-width: 992px) {
   .first-img--project{
     height: 22em;
+  }
+
+  .bubbleLeft {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    animation: floatLeft 6s ease-in-out infinite;
+    img { width: 100%; height: auto; };
+    margin: 2.5em;
+  }
+  
+  .bubbleRight {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    animation: floatRight 6s ease-in-out infinite;
+    img { width: 100%; height: auto; };
+    margin: 2.5em;
   }
 
 }
